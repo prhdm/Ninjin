@@ -9,7 +9,7 @@ func CreateFarm(farmname string) (uint, error) {
 	farm := &Farm{
 		FarmName: farmname,
 	}
-	if err:= PostgresDBProvider.DB.Create(farm).Error; err != nil {
+	if err := PostgresDBProvider.DB.Create(farm).Error; err != nil {
 		return 0, err
 	}
 	return farm.ID, nil

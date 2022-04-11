@@ -1,13 +1,13 @@
 package models
 
 import (
-	"fmt"
-	"time"
-	"golang.org/x/crypto/bcrypt"
 	"farm/configs"
+	"fmt"
+	"github.com/dgrijalva/jwt-go"
 	uuid "github.com/satori/go.uuid"
 	log "github.com/sirupsen/logrus"
-	"github.com/dgrijalva/jwt-go"
+	"golang.org/x/crypto/bcrypt"
+	"time"
 )
 
 func GetUser(username string) (*User, error) {
@@ -53,4 +53,3 @@ func Login(user *User, password string) (status bool, errMessage string, tok str
 	}
 	return true, "", tokenString
 }
-

@@ -2,10 +2,10 @@ package cli
 
 import (
 	"farm/configs"
+	"farm/src/models"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"farm/src/models"
 )
 
 var (

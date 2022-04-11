@@ -24,7 +24,7 @@ type Credential struct {
 }
 
 type Configuration struct {
-	Server                             ServerConfiguration
-	Database                           DatabaseConfiguration
-	Credential                         Credential
+	Server     ServerConfiguration
+	Database   DatabaseConfiguration
+	Credential Credential
 }

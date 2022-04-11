@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"context"
-	pb_user "farm/src/proto/messages/user"
 	"farm/src/models"
+	pb_user "farm/src/proto/messages/user"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -25,4 +25,3 @@ func (f FarmServer) Login(ctx context.Context, request *pb_user.LoginRequest) (*
 		Token:        token,
 	}, nil
 }
-

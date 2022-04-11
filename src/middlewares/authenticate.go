@@ -24,7 +24,7 @@ func Authenticate(ctx context.Context) (context.Context, error) {
 	type TokenWithPayload struct {
 		models.AuthToken
 		FarmID uint `json:"company_id"`
-		UserID    uint `json:"user_id"`
+		UserID uint `json:"user_id"`
 	}
 	tk := &TokenWithPayload{}
 	_, err = jwt.ParseWithClaims(encodedToken, tk, func(token *jwt.Token) (interface{}, error) {

@@ -1,9 +1,9 @@
 package cli
 
 import (
+	"farm/src/models"
 	"github.com/spf13/cobra"
 	"log"
-	"farm/src/models"
 )
 
 var createObject = &cobra.Command{

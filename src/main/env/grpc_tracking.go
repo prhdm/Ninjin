@@ -1,21 +1,21 @@
 package env
 
 import (
+	"farm/configs"
+	"farm/src/controllers"
+	"farm/src/middlewares"
+	"farm/src/proto/service/farm"
 	"fmt"
+	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
+	grpc_auth "github.com/grpc-ecosystem/go-grpc-middleware/auth"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/keepalive"
 	"log"
 	"net"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-	"farm/src/controllers"
-	"farm/configs"
-	"farm/src/proto/service/farm"
-	"farm/src/middlewares"
-	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
-	grpc_auth "github.com/grpc-ecosystem/go-grpc-middleware/auth"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/keepalive"
 )
 
 func newFarmServer() controllers.FarmServer {
