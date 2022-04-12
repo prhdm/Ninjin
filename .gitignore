@@ -6,7 +6,6 @@
 secure/
 .scannerwork/
 
-go.sum
 *.diff
 *.err
 *.orig
