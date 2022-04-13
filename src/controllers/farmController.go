@@ -4,6 +4,7 @@ import (
 	"context"
 	"farm/src/models"
 	pb_user "farm/src/proto/messages/user"
+	pb_device "farm/src/proto/messages/device"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -24,4 +25,10 @@ func (f FarmServer) Login(ctx context.Context, request *pb_user.LoginRequest) (*
 		ErrorMessage: errMessage,
 		Token:        token,
 	}, nil
+}
+
+func (f FarmServer) CreateDevice(ctx context.Context, request *pb_device.CreateDeviceRequest) (*pb_device.CreateDeviceResponse, error) {
+	log.Info("Receive message to create device")
+
+	return nil, nil
 }

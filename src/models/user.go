@@ -14,7 +14,7 @@ type User struct {
 	NationalID string `gorm:"unique_index;not null;"`
 	Email      string `gorm:"column:email"`
 	Phone      string `gorm:"column:phone"`
-	FarmID     uint   `gorm:"column:company_id"`
+	FarmID     uint   `gorm:"column:farm_id"`
 	Farm       Farm
 }
 

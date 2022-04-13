@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package messages.device;
+
+option go_package = "farm/src/proto/messages/device";
+
+message CreateDeviceRequest {
+  Device device = 1;
+}
+
+message CreateDeviceResponse {
+  bool status = 1;
+  string error_message = 2;
+}
+
+message Device {
+  string device_serial = 1;
+  string device_name = 2;
+  string phone = 3;
+}

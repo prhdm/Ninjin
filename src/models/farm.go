@@ -6,7 +6,7 @@ import (
 
 type Farm struct {
 	gorm.Model
-	FarmName string `gorm:"column:company_name;"`
+	FarmName string `gorm:"column:farm_name;"`
 }
 
 func (Farm) TableName() string {

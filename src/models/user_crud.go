@@ -33,11 +33,11 @@ func Login(user *User, password string) (status bool, errMessage string, tok str
 	}
 	type TokenWithPayload struct {
 		*AuthToken
-		CompanyId uint `json:"company_id"`
+		FarmId uint `json:"farm_id"`
 		UserId    uint `json:"user_id"`
 	}
 	tokenWithPayload := TokenWithPayload{
-		CompanyId: user.FarmID,
+		FarmId: user.FarmID,
 		UserId:    user.ID,
 	}
 	tokenWithPayload.AuthToken = tk

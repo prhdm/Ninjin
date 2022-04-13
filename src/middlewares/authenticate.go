@@ -23,7 +23,7 @@ func Authenticate(ctx context.Context) (context.Context, error) {
 
 	type TokenWithPayload struct {
 		models.AuthToken
-		FarmID uint `json:"company_id"`
+		FarmID uint `json:"farm_id"`
 		UserID uint `json:"user_id"`
 	}
 	tk := &TokenWithPayload{}
@@ -38,7 +38,7 @@ func Authenticate(ctx context.Context) (context.Context, error) {
 
 	ctx = context.WithValue(ctx, "username", tk.Username)
 	ctx = context.WithValue(ctx, "user_id", tk.UserID)
-	ctx = context.WithValue(ctx, "company_id", tk.FarmID)
+	ctx = context.WithValue(ctx, "farm_id", tk.FarmID)
 
 	return ctx, nil
 }
