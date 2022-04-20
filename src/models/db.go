@@ -14,6 +14,10 @@ import (
 
 var PostgresDBProvider DBProvider
 
+type IRepository interface {
+	Save()
+}
+
 type DBProvider struct {
 	config configs.DatabaseConfiguration
 

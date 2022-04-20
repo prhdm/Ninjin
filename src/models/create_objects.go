@@ -5,6 +5,8 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+// Create insert the value into database
+
 func CreateFarm(farmname string) (uint, error) {
 	farm := &Farm{
 		FarmName: farmname,
@@ -33,3 +35,22 @@ func CreateUser(username string, password string, farmID uint) error {
 	}
 	return nil
 }
+
+func CreateDataLog(deviceLog *DeviceLog) error{
+	createdDataLog := PostgresDBProvider.DB.Create(deviceLog)
+	if createdDataLog.Error != nil {
+		log.Info(createdDataLog.Error)
+		return createdDataLog.Error
+	}
+	return nil
+}
+
+func CreateDevice(device *Device) error{
+	createdData := PostgresDBProvider.DB.Create(device)
+	if createdData.Error != nil {
+		log.Info(createdData.Error)
+		return createdData.Error
+	}
+	return nil
+}
+

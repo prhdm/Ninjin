@@ -8,11 +8,10 @@ import (
 
 type Device struct {
 	gorm.Model
-	DeviceSerial string `gorm:"column:device_serial"`
+	DeviceString string `gorm:"column:device_id"`
 	Phone    string `gorm:"column:phone"`
 	Farm     Farm
 	FarmID   uint
-	DeviceName string `gorm:"column:device_name"`
 }
 
 type DeviceLog struct {
