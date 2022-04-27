@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Button from "../Button";
-import usagiLogo from '../icons/icons8-carrot-60.png';
+import Button from "../../components/Button";
+import usagiLogo from '../../components/icons/icons8-carrot-60.png'
 import PropTypes from 'prop-types';
 import "./login.css";
 
