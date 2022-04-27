@@ -11,18 +11,18 @@ import (
 
 // MQTT credentials(you may have username and password too)
 const mqttServer = "79.175.177.48:1883"
-const mqttClientID = "some-unique-string"
+const mqttClientID = "IAmUsagi"
 const userName = "usagi"
 const password = "usagi1234"
 
 // MQTT topics(channels) that we work with.
-const tempTopic = "/fleet/v1/#"
+const tempTopic = "fleet/v1/#"
 
 
 
 var wg = sync.WaitGroup{}
 
-func main() {
+func Start() {
 	wg.Add(1)
 
 	greeter()
@@ -30,7 +30,9 @@ func main() {
 	c := createClient()
 
 	handler := NewLogHandler()
+	fmt.Println("new log handler created")
 	if token := c.Subscribe(tempTopic, 0, func(client MQTT.Client, message MQTT.Message) {
+		fmt.Println("in function")
 		handler.Handle(string(message.Payload()))
 	}); token.Wait() && token.Error() != nil {
 		fmt.Println(token.Error())
@@ -44,8 +46,11 @@ func main() {
 func createClient() MQTT.Client {
 	opts := MQTT.NewClientOptions().AddBroker("tcp://" + mqttServer).SetClientID(mqttClientID)
 	opts.AutoReconnect = true
+	opts.SetUsername(userName)
+	opts.SetPassword(password)
 
 	c := MQTT.NewClient(opts)
+
 	if token := c.Connect(); token.Wait() && token.Error() != nil {
 		panic(token.Error())
 	}

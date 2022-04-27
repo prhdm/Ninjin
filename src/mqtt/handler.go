@@ -15,13 +15,13 @@ func NewLogHandler() *Handler {
 }
 
 func (h *Handler) Handle(payload string) {
+	fmt.Println(payload)
 	deviceLog := &models.DeviceLog{}
 	err := json.Unmarshal([]byte(payload), deviceLog)
 	if err != nil{
 		fmt.Println(err)
 	}
 	fmt.Println(deviceLog)
-	//to do: persist data
 	models.CreateDataLog(deviceLog)
 }
 
