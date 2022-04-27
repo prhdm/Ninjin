@@ -22,7 +22,6 @@ func (h *Handler) Handle(payload string) {
 		fmt.Println(err)
 	}
 	fmt.Println(deviceLog)
-	//to do: persist data
 	models.CreateDataLog(deviceLog)
 }
 

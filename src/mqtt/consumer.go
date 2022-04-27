@@ -16,7 +16,7 @@ const userName = "usagi"
 const password = "usagi1234"
 
 // MQTT topics(channels) that we work with.
-const tempTopic = "/fleet/v1/"
+const tempTopic = "fleet/v1/#"
 
 
 
