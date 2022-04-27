@@ -1,9 +1,10 @@
 module farm
 
-go 1.16
+go 1.15
 
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/eclipse/paho.mqtt.golang v1.3.5
 	github.com/golang/protobuf v1.5.2
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0

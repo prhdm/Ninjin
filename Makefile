@@ -1,3 +1,18 @@
+go build : farm
+
+all :  clean dependencies build
+
+clean:
+	@echo "Cleaning..."
+	-rm -rf $(BUNARY_NAME)
+	-rm -rf $(BINARY_UNIX)
+	-$(GOCLEAN) -i
+	@echo "Done cleaning"
+
+dependencies:
+	$(GOMOD) download
+	$(GOMOD) vendor
+
 proto-dependencies:
 	$(GOGET) github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 	$(GOGET) github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
@@ -13,12 +28,12 @@ farm:
 	$(GOBUILD) -o $(BINARY_NAME) -v
 
 GOCMD=go
+GOBUILD=$(GOCMD) build
 GOMOD=GO111MODULE=on $(GOCMD) mod
-GOGET=GO111MODULE=on $(GOCMD) "get"
+GOGET=GO111MODULE=on $(GOCMD) "get -u"
+GOCLEAN=$(GOCMD) clean
 BUILD_PROTO_DIRECTORY=../
-GOPATH=/home/abol/go/pkg/mod
 GOOGLE_APIS_DIR="$$(find $(GOPATH) -wholename "*github.com/grpc-ecosystem/grpc-gateway*/third_party/googleapis" 2>/dev/null | head -n 1)"
 PROTOC_IMPORT_PATH=-I${GOOGLE_APIS_DIR} -I $$PWD/proto -I/usr/local/include
-GOBUILD=$(GOCMD) build
 BINARY_NAME=farm
 BINARY_UNIX=$(BINARY_NAME)_unix
