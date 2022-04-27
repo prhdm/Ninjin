@@ -15,6 +15,6 @@ message CreateDeviceResponse {
 
 message Device {
   string device_serial = 1;
-  string device_name = 2;
+  string device_owner_name = 2;
   string phone = 3;
 }
