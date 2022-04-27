@@ -1,0 +1,19 @@
+:root {
+    --navColor: #644c3e;
+}
+
+.navbar {
+    height: 96px;
+    background-color: var(--navColor);
+} 
+
+.logout {
+    background-color: #ffbe7d;
+    margin-right: 15px;
+}
+
+.avatar {
+    margin: 7px;
+    margin-left: 15px;
+    border-radius: 20rem;
+}
