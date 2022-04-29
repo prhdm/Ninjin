@@ -32,7 +32,6 @@ func Start() {
 	handler := NewLogHandler()
 	fmt.Println("new log handler created")
 	if token := c.Subscribe(tempTopic, 0, func(client MQTT.Client, message MQTT.Message) {
-		fmt.Println("in function")
 		handler.Handle(string(message.Payload()))
 	}); token.Wait() && token.Error() != nil {
 		fmt.Println(token.Error())

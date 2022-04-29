@@ -2,12 +2,14 @@ package mqtt
 
 import (
 	"encoding/json"
-	"farm/src/models"
 	"fmt"
 )
 
 type Handler struct {
+}
 
+type jsonType struct {
+	Data []float32 `json:"data"`
 }
 
 func NewLogHandler() *Handler {
@@ -16,12 +18,12 @@ func NewLogHandler() *Handler {
 
 func (h *Handler) Handle(payload string) {
 	fmt.Println(payload)
-	deviceLog := &models.DeviceLog{}
-	err := json.Unmarshal([]byte(payload), deviceLog)
+	result := jsonType{}
+	err := json.Unmarshal([]byte(payload), &result)
 	if err != nil{
 		fmt.Println(err)
 	}
-	fmt.Println(deviceLog)
-	models.CreateDataLog(deviceLog)
+	fmt.Println(result)
+	//models.CreateDataLog(deviceLog)
 }
 
