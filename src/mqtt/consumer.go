@@ -1,12 +1,12 @@
 package mqtt
 
 import (
-	"fmt"
 	MQTT "github.com/eclipse/paho.mqtt.golang"
 	"os"
 	/*"strconv"ذ
 	"strings"*/
 	"sync"
+	log "github.com/sirupsen/logrus"
 )
 
 // MQTT credentials(you may have username and password too)
@@ -30,11 +30,11 @@ func Start() {
 	c := createClient()
 
 	handler := NewLogHandler()
-	fmt.Println("new log handler created")
+	log.Info("new log handler created")
 	if token := c.Subscribe(tempTopic, 0, func(client MQTT.Client, message MQTT.Message) {
-		handler.Handle(string(message.Payload()))
+		handler.Handle(string(message.Payload()), message.Topic())
 	}); token.Wait() && token.Error() != nil {
-		fmt.Println(token.Error())
+		log.Info(token.Error())
 		os.Exit(1)
 	}
 
@@ -59,8 +59,8 @@ func createClient() MQTT.Client {
 
 // greeter prints a short introduction text to the terminal.
 func greeter() {
-	fmt.Println("=============================================")
-	fmt.Println("* * * HELLO FROM MQTT MONITORING SERVER * * *")
-	fmt.Println("=============================================")
+	log.Info("=============================================")
+	log.Info("* * * HELLO FROM MQTT MONITORING SERVER * * *")
+	log.Info("=============================================")
 }
 
