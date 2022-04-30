@@ -3,7 +3,6 @@ package cli
 import (
 	"farm/configs"
 	"farm/src/models"
-	"farm/src/mqtt"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -49,5 +48,4 @@ func initConfig() {
 		log.Fatalf("Fatal error on create db: %s \n", err)
 	}
 	models.PostgresDBProvider = dbProvider
-	mqtt.Start()
 }
