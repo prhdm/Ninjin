@@ -4,6 +4,7 @@ import (
 	"farm/src/main/env"
 	"github.com/spf13/cobra"
 	"log"
+	"farm/src/mqtt"
 )
 
 var serveCmd = &cobra.Command{
@@ -21,6 +22,7 @@ func init() {
 
 func serve() {
 	go env.RunInsecureGRPCServer()
+	go mqtt.Start()
 	err := env.RunInsecureHTTPServer()
 	if err != nil {
 		log.Fatal(err)
