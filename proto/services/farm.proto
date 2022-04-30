@@ -4,6 +4,7 @@ package service.farm;
 import "google/api/annotations.proto";
 import "messages/user.proto";
 import "messages/device.proto";
+import "messages/device_log.proto";
 
 option go_package = "farm/src/proto/service/farm";
 
@@ -18,6 +19,13 @@ service Farm {
   rpc CreateDevice (messages.device.CreateDeviceRequest) returns (messages.device.CreateDeviceResponse) {
     option (google.api.http) = {
       post: "/device/create"
+      body: "*"
+    };
+  }
+
+  rpc GetDeviceLog (messages.device_log.GetDeviceLogRequest) returns (messages.device_log.GetDeviceLogResponse) {
+    option (google.api.http) = {
+      post: "/device/get_log"
       body: "*"
     };
   }
