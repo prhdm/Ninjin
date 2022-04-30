@@ -2,6 +2,7 @@ package mqtt
 
 import (
 	"encoding/json"
+	"farm/src/models"
 	"fmt"
 	log "github.com/sirupsen/logrus"
 	"strconv"
@@ -43,15 +44,7 @@ func (h *Handler) Handle(payload string, topic string) {
 	deviceTime := getTime(fmt.Sprintf("%d", int64(result.Data[4])))
 	serverTime := time.Now()
 
-	log.Info("===========================================")
-	log.Info(serial)
-	log.Info(humidity)
-	log.Info(deviceTime)
-	log.Info(serverTime)
-	log.Info(result.Data)
-	log.Info(topic)
-	log.Info("===========================================")
-
-	//models.CreateDataLog(deviceLog)
+	models.CreateDeviceLog(serial, humidity, deviceTime, serverTime)
+	return
 }
 
