@@ -12,8 +12,6 @@ type Device struct {
 	Phone        string `gorm:"column:phone"`
 	Farm         Farm
 	FarmID       uint
-	MinHumidity  float64
-	MaxHumidity  float64
 }
 
 type DeviceLog struct {
