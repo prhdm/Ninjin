@@ -3,9 +3,10 @@ import Button from "../../components/Button";
 import usagiLogo from '../../components/icons/icons8-carrot-60.png'
 import PropTypes from 'prop-types';
 import "./login.css";
+import { useNavigate } from "react-router-dom";
 
 async function loginUser(credentials) {
-    return fetch('http://localhost:8000/login', {
+    return fetch( 'http://79.175.177.48:8000/login' , {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -23,15 +24,22 @@ const Login = ({ setToken }) => {
 
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
+    const navigate = useNavigate()
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const token = await loginUser({
+        try {const response = await loginUser({
           username,
           password
         });
-        console.log("mamd",token)
-        setToken(token);
+        if (response){setToken(response);
+        navigate("/home")}
+
+      }
+
+        catch (err) {
+          console.log(err)
+        }
     }
 
     return (
