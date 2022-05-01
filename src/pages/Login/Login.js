@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 
-async function loginUser(credentials) {
+function loginUser(credentials) {
     return fetch( 'http://79.175.177.48:8000/login' , {
       method: 'POST',
       headers: {
@@ -14,10 +14,6 @@ async function loginUser(credentials) {
       body: JSON.stringify(credentials)
     })
       .then(data => data.json())
-      .then(response => {
-
-        if(response.status && response.token){  
-        localStorage.setItem("jwt", response.token)}})
    }
 
 const Login = ({ setToken }) => {
@@ -34,7 +30,7 @@ const Login = ({ setToken }) => {
         });
         console.log(response)
         if (response){setToken(response);
-        navigate("/home")}
+        navigate("/")}
 
       }
 
