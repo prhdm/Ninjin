@@ -32,6 +32,7 @@ const Login = ({ setToken }) => {
           username,
           password
         });
+        console.log(response)
         if (response){setToken(response);
         navigate("/home")}
 
