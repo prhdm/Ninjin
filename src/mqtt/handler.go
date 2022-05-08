@@ -31,7 +31,18 @@ func getTime(deviceTime string) time.Time{
 	return time.Date(int(year), time.Month(month), int(day), int(hour), int(minute), int(second), 0, loc)
 }
 
+func secondTypeHandler(payload string) string{
+	sz := len(payload)
+	firstPart := payload[sz - 4:]
+	if firstPart == "{ee}"{
+		payload = payload[:sz - 4]
+	}
+	return payload
+}
+
 func (h *Handler) Handle(payload string, topic string) {
+	payload = secondTypeHandler(payload)
+
 	result := jsonType{}
 	err := json.Unmarshal([]byte(payload), &result)
 	if err != nil{
