@@ -14,12 +14,12 @@ var createObject = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		switch args[0] {
 		case "user":
-			farmID, err := models.CreateFarm(args[1])
+			farmID, err := models.CreateFarm(args[3])
 			if err != nil {
 				log.Println(err)
 				break
 			}
-			err = models.CreateUser(args[2], args[3], farmID)
+			err = models.CreateUser(args[1], args[2], farmID)
 			if err != nil {
 				log.Println(err)
 				break

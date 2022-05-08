@@ -29,4 +29,11 @@ service Farm {
       body: "*"
     };
   }
+
+  rpc Logout (messages.user.LogoutRequest) returns (messages.user.LogoutResponse) {
+    option (google.api.http) = {
+      post: "/logout"
+      body: "*"
+    };
+  }
 }
