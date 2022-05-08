@@ -53,3 +53,21 @@ func Login(user *User, password string) (status bool, errMessage string, tok str
 	}
 	return true, "", tokenString
 }
+
+func Logout(encodedToken string) bool {
+	type TokenWithPayload struct {
+		AuthToken
+		FarmID uint `json:"farm_id"`
+		UserID uint `json:"user_id"`
+	}
+	tk := &TokenWithPayload{}
+	jwt.ParseWithClaims(encodedToken, tk, func(token *jwt.Token) (interface{}, error) {
+		return []byte(configs.Config.Credential.TokenSecret), nil
+	})
+	err := PostgresDBProvider.DB.Table(AuthToken{}.TableName()).Delete(tk).Error
+	if err != nil {
+		log.Info(err)
+		return false
+	}
+	return true
+}

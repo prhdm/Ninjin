@@ -38,7 +38,7 @@ var file_services_farm_proto_rawDesc = []byte{
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x15, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73,
 	0x2f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x19, 0x6d,
 	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x6c,
-	0x6f, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xd6, 0x02, 0x0a, 0x04, 0x46, 0x61, 0x72,
+	0x6f, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xb1, 0x03, 0x0a, 0x04, 0x46, 0x61, 0x72,
 	0x6d, 0x12, 0x55, 0x0a, 0x05, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12, 0x1b, 0x2e, 0x6d, 0x65, 0x73,
 	0x73, 0x61, 0x67, 0x65, 0x73, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
@@ -60,28 +60,38 @@ var file_services_farm_proto_rawDesc = []byte{
 	0x2e, 0x47, 0x65, 0x74, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4c, 0x6f, 0x67, 0x52, 0x65, 0x73,
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1a, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x14, 0x22, 0x0f, 0x2f,
 	0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x67, 0x65, 0x74, 0x5f, 0x6c, 0x6f, 0x67, 0x3a, 0x01,
-	0x2a, 0x42, 0x1d, 0x5a, 0x1b, 0x66, 0x61, 0x72, 0x6d, 0x2f, 0x73, 0x72, 0x63, 0x2f, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x66, 0x61, 0x72, 0x6d,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x2a, 0x12, 0x59, 0x0a, 0x06, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x12, 0x1c, 0x2e, 0x6d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x4c, 0x6f, 0x67, 0x6f,
+	0x75, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x6d, 0x65, 0x73, 0x73,
+	0x61, 0x67, 0x65, 0x73, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x12, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0c,
+	0x22, 0x07, 0x2f, 0x6c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x3a, 0x01, 0x2a, 0x42, 0x1d, 0x5a, 0x1b,
+	0x66, 0x61, 0x72, 0x6d, 0x2f, 0x73, 0x72, 0x63, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x66, 0x61, 0x72, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var file_services_farm_proto_goTypes = []interface{}{
 	(*user.LoginRequest)(nil),               // 0: messages.user.LoginRequest
 	(*device.CreateDeviceRequest)(nil),      // 1: messages.device.CreateDeviceRequest
 	(*device_log.GetDeviceLogRequest)(nil),  // 2: messages.device_log.GetDeviceLogRequest
-	(*user.LoginResponse)(nil),              // 3: messages.user.LoginResponse
-	(*device.CreateDeviceResponse)(nil),     // 4: messages.device.CreateDeviceResponse
-	(*device_log.GetDeviceLogResponse)(nil), // 5: messages.device_log.GetDeviceLogResponse
+	(*user.LogoutRequest)(nil),              // 3: messages.user.LogoutRequest
+	(*user.LoginResponse)(nil),              // 4: messages.user.LoginResponse
+	(*device.CreateDeviceResponse)(nil),     // 5: messages.device.CreateDeviceResponse
+	(*device_log.GetDeviceLogResponse)(nil), // 6: messages.device_log.GetDeviceLogResponse
+	(*user.LogoutResponse)(nil),             // 7: messages.user.LogoutResponse
 }
 var file_services_farm_proto_depIdxs = []int32{
 	0, // 0: service.farm.Farm.Login:input_type -> messages.user.LoginRequest
 	1, // 1: service.farm.Farm.CreateDevice:input_type -> messages.device.CreateDeviceRequest
 	2, // 2: service.farm.Farm.GetDeviceLog:input_type -> messages.device_log.GetDeviceLogRequest
-	3, // 3: service.farm.Farm.Login:output_type -> messages.user.LoginResponse
-	4, // 4: service.farm.Farm.CreateDevice:output_type -> messages.device.CreateDeviceResponse
-	5, // 5: service.farm.Farm.GetDeviceLog:output_type -> messages.device_log.GetDeviceLogResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
+	3, // 3: service.farm.Farm.Logout:input_type -> messages.user.LogoutRequest
+	4, // 4: service.farm.Farm.Login:output_type -> messages.user.LoginResponse
+	5, // 5: service.farm.Farm.CreateDevice:output_type -> messages.device.CreateDeviceResponse
+	6, // 6: service.farm.Farm.GetDeviceLog:output_type -> messages.device_log.GetDeviceLogResponse
+	7, // 7: service.farm.Farm.Logout:output_type -> messages.user.LogoutResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -126,6 +136,7 @@ type FarmClient interface {
 	Login(ctx context.Context, in *user.LoginRequest, opts ...grpc.CallOption) (*user.LoginResponse, error)
 	CreateDevice(ctx context.Context, in *device.CreateDeviceRequest, opts ...grpc.CallOption) (*device.CreateDeviceResponse, error)
 	GetDeviceLog(ctx context.Context, in *device_log.GetDeviceLogRequest, opts ...grpc.CallOption) (*device_log.GetDeviceLogResponse, error)
+	Logout(ctx context.Context, in *user.LogoutRequest, opts ...grpc.CallOption) (*user.LogoutResponse, error)
 }
 
 type farmClient struct {
@@ -163,11 +174,21 @@ func (c *farmClient) GetDeviceLog(ctx context.Context, in *device_log.GetDeviceL
 	return out, nil
 }
 
+func (c *farmClient) Logout(ctx context.Context, in *user.LogoutRequest, opts ...grpc.CallOption) (*user.LogoutResponse, error) {
+	out := new(user.LogoutResponse)
+	err := c.cc.Invoke(ctx, "/service.farm.Farm/Logout", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FarmServer is the server API for Farm service.
 type FarmServer interface {
 	Login(context.Context, *user.LoginRequest) (*user.LoginResponse, error)
 	CreateDevice(context.Context, *device.CreateDeviceRequest) (*device.CreateDeviceResponse, error)
 	GetDeviceLog(context.Context, *device_log.GetDeviceLogRequest) (*device_log.GetDeviceLogResponse, error)
+	Logout(context.Context, *user.LogoutRequest) (*user.LogoutResponse, error)
 }
 
 // UnimplementedFarmServer can be embedded to have forward compatible implementations.
@@ -182,6 +203,9 @@ func (*UnimplementedFarmServer) CreateDevice(context.Context, *device.CreateDevi
 }
 func (*UnimplementedFarmServer) GetDeviceLog(context.Context, *device_log.GetDeviceLogRequest) (*device_log.GetDeviceLogResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDeviceLog not implemented")
+}
+func (*UnimplementedFarmServer) Logout(context.Context, *user.LogoutRequest) (*user.LogoutResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
 }
 
 func RegisterFarmServer(s *grpc.Server, srv FarmServer) {
@@ -242,6 +266,24 @@ func _Farm_GetDeviceLog_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Farm_Logout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(user.LogoutRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FarmServer).Logout(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.farm.Farm/Logout",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FarmServer).Logout(ctx, req.(*user.LogoutRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Farm_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "service.farm.Farm",
 	HandlerType: (*FarmServer)(nil),
@@ -257,6 +299,10 @@ var _Farm_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDeviceLog",
 			Handler:    _Farm_GetDeviceLog_Handler,
+		},
+		{
+			MethodName: "Logout",
+			Handler:    _Farm_Logout_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

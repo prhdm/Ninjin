@@ -15,3 +15,9 @@ message LoginResponse {
   string token = 3;
   uint64 id = 4;
 }
+
+message LogoutRequest {}
+
+message LogoutResponse {
+  bool status = 1;
+}
