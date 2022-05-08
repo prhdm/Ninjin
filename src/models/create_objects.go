@@ -3,6 +3,7 @@ package models
 import (
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/crypto/bcrypt"
+	"time"
 )
 
 // Create insert the value into database
@@ -36,7 +37,14 @@ func CreateUser(username string, password string, farmID uint) error {
 	return nil
 }
 
-func CreateDataLog(deviceLog *DeviceLog) error{
+func CreateDeviceLog(serial string, humidity int32, deviceTime, serverTime time.Time) error{
+	deviceLog := &DeviceLog{
+		DeviceSerial: serial,
+		DeviceTime:   deviceTime,
+		ServerTime:   serverTime,
+		Humidity: float32(humidity),
+		Temp: 0,
+	}
 	createdDataLog := PostgresDBProvider.DB.Create(deviceLog)
 	if createdDataLog.Error != nil {
 		log.Info(createdDataLog.Error)
