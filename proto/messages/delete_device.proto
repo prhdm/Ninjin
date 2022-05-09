@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package messages.delete_device;
+
+option go_package = "farm/src/proto/messages/delete_device";
+
+message DeleteDeviceRequest {
+    string deviceSerial=1;
+}
+
+message DeleteDeviceResponse {
+  bool status=1;
+}

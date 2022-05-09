@@ -10,6 +10,7 @@ build-proto-go:
 	find ./proto/services -name "*.proto" 2>/dev/null | xargs realpath | xargs -I {} protoc $(PROTOC_IMPORT_PATH) --grpc-gateway_out=logtostderr=true:$(BUILD_PROTO_DIRECTORY) --go_out=plugins=grpc:$(BUILD_PROTO_DIRECTORY) {}
 
 farm:
+	test ! -f $(BINARY_NAME) || rm $(BINARY_NAME)
 	@echo "Building Farm"
 	$(GOBUILD) ./...
 	$(GOBUILD) -o $(BINARY_NAME) -v
@@ -22,6 +23,7 @@ all: build-proto-go
 all-by-docker:
 	docker run --rm --name proto-compiler -it --user $$(id -u):$$(id -g) $(DOCKER_VOLUMES) $(DOCKER_IMAGE_NAME) all
 
+.PHONY: farm
 GOCMD=go
 GOMOD=GO111MODULE=on $(GOCMD) mod
 GOGET=GO111MODULE=on $(GOCMD) "get"
@@ -31,6 +33,7 @@ BUILD_PATH=git.carriot.ir/
 PROJECT_PATH=git.carriot.ir/farm/
 
 BUILD_PROTO_DIRECTORY=../
+GOPATH=/home/parham/go/pkg/mod
 GOOGLE_APIS_DIR="$$(find $(GOPATH) -wholename "*github.com/grpc-ecosystem/grpc-gateway*/third_party/googleapis" 2>/dev/null | head -n 1)"
 PROTOC_IMPORT_PATH=-I${GOOGLE_APIS_DIR} -I $$PWD/proto -I/usr/local/include
 GOBUILD=$(GOCMD) build
