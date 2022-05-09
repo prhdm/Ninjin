@@ -7,6 +7,7 @@ import "messages/device.proto";
 import "messages/device_log.proto";
 import "messages/device_list.proto";
 import "messages/delete_device.proto";
+import "messages/update_device.proto";
 
 option go_package = "farm/src/proto/service/farm";
 
@@ -48,6 +49,13 @@ service Farm {
   rpc DeleteDevice (messages.delete_device.DeleteDeviceRequest) returns (messages.delete_device.DeleteDeviceResponse) {
     option (google.api.http) = {
       post: "/device/delete_device"
+      body: "*"
+    };
+  }
+
+  rpc UpdateDevice (messages.update_device.UpdateDeviceRequest) returns (messages.update_device.UpdateDeviceResponse) {
+    option (google.api.http) = {
+      post: "/device/update_device"
       body: "*"
     };
   }

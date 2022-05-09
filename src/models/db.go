@@ -14,7 +14,6 @@ import (
 
 var PostgresDBProvider DBProvider
 
-
 type DBProvider struct {
 	config configs.DatabaseConfiguration
 
@@ -26,7 +25,6 @@ func CreateDBProvider(config configs.DatabaseConfiguration) (DBProvider, error) 
 	provider := &DBProvider{
 		config: config,
 	}
-	fmt.Println(config)
 	db, err := gorm.Open("postgres", fmt.Sprintf(
 		"host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", config.Host, config.Port, config.User, config.Password, config.DB))
 
