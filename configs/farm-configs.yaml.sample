@@ -1,0 +1,18 @@
+server:
+  host: 0.0.0.0
+  grpcport: 7777
+  httpport: 8000
+
+database:
+  host: usagi
+  port: 5432
+  user: usagi
+  password: usagi
+  db: usagidb
+  connMaxLifetime: 0
+  maxIdleConns: 20
+  maxOpenConns: 20
+
+credential:
+  tokensecret: secret
+
