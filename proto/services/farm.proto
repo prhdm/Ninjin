@@ -8,6 +8,7 @@ import "messages/device_log.proto";
 import "messages/device_list.proto";
 import "messages/delete_device.proto";
 import "messages/update_device.proto";
+import "messages/watering_log.proto";
 
 option go_package = "farm/src/proto/service/farm";
 
@@ -56,6 +57,13 @@ service Farm {
   rpc UpdateDevice (messages.update_device.UpdateDeviceRequest) returns (messages.update_device.UpdateDeviceResponse) {
     option (google.api.http) = {
       post: "/device/update_device"
+      body: "*"
+    };
+  }
+
+  rpc CreateWateringLog (messages.log.CreateWateringLogRequest) returns (messages.log.CreateWateringLogResponse) {
+    option (google.api.http) = {
+      post: "/watering-log/create"
       body: "*"
     };
   }

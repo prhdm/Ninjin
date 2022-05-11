@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package messages.log;
+import "google/protobuf/timestamp.proto";
+
+option go_package = "farm/src/proto/messages/watering_log";
+
+message CreateWateringLogRequest {
+  google.protobuf.Timestamp time = 1;
+  string device_serial = 2;
+  float water_amount = 3;
+}
+
+message CreateWateringLogResponse {
+  bool status = 1;
+  string error_message = 2;
+}
