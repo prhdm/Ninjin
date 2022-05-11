@@ -54,7 +54,7 @@ func CreateDeviceLog(serial string, humidity int32, deviceTime, serverTime time.
 }
 
 func CreateDevice(device *Device) error{
-	createdData := PostgresDBProvider.DB.Create(device)
+	createdData := PostgresDBProvider.DB.Create(&device)
 	if createdData.Error != nil {
 		log.Info(createdData.Error)
 		return createdData.Error
