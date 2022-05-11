@@ -49,7 +49,7 @@ var file_services_farm_proto_rawDesc = []byte{
 	0x74, 0x6f, 0x1a, 0x1c, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2f, 0x75, 0x70, 0x64,
 	0x61, 0x74, 0x65, 0x5f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x1a, 0x1b, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2f, 0x77, 0x61, 0x74, 0x65, 0x72,
-	0x69, 0x6e, 0x67, 0x5f, 0x6c, 0x6f, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xdd, 0x07,
+	0x69, 0x6e, 0x67, 0x5f, 0x6c, 0x6f, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xde, 0x08,
 	0x0a, 0x04, 0x46, 0x61, 0x72, 0x6d, 0x12, 0x55, 0x0a, 0x05, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12,
 	0x1b, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e,
 	0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x6d,
@@ -111,10 +111,18 @@ var file_services_farm_proto_rawDesc = []byte{
 	0x6f, 0x67, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x57, 0x61, 0x74, 0x65, 0x72, 0x69, 0x6e,
 	0x67, 0x4c, 0x6f, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f, 0x82, 0xd3,
 	0xe4, 0x93, 0x02, 0x19, 0x22, 0x14, 0x2f, 0x77, 0x61, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x2d,
-	0x6c, 0x6f, 0x67, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x42, 0x1d, 0x5a,
-	0x1b, 0x66, 0x61, 0x72, 0x6d, 0x2f, 0x73, 0x72, 0x63, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f,
-	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x66, 0x61, 0x72, 0x6d, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x6c, 0x6f, 0x67, 0x2f, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x7f, 0x0a,
+	0x0e, 0x45, 0x64, 0x69, 0x74, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12,
+	0x26, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2e, 0x64, 0x65, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x45, 0x64, 0x69, 0x74, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x73, 0x2e, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x45, 0x64, 0x69, 0x74, 0x44, 0x65,
+	0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x22, 0x1c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x16, 0x22, 0x11, 0x2f, 0x64, 0x65, 0x76, 0x69, 0x63,
+	0x65, 0x2f, 0x65, 0x64, 0x69, 0x74, 0x2d, 0x6e, 0x61, 0x6d, 0x65, 0x3a, 0x01, 0x2a, 0x42, 0x1d,
+	0x5a, 0x1b, 0x66, 0x61, 0x72, 0x6d, 0x2f, 0x73, 0x72, 0x63, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x66, 0x61, 0x72, 0x6d, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var file_services_farm_proto_goTypes = []interface{}{
@@ -126,14 +134,16 @@ var file_services_farm_proto_goTypes = []interface{}{
 	(*delete_device.DeleteDeviceRequest)(nil),      // 5: messages.delete_device.DeleteDeviceRequest
 	(*update_device.UpdateDeviceRequest)(nil),      // 6: messages.update_device.UpdateDeviceRequest
 	(*watering_log.CreateWateringLogRequest)(nil),  // 7: messages.log.CreateWateringLogRequest
-	(*user.LoginResponse)(nil),                     // 8: messages.user.LoginResponse
-	(*device.CreateDeviceResponse)(nil),            // 9: messages.device.CreateDeviceResponse
-	(*device_log.GetDeviceLogResponse)(nil),        // 10: messages.device_log.GetDeviceLogResponse
-	(*device_list.GetDeviceListResponse)(nil),      // 11: messages.device_list.GetDeviceListResponse
-	(*user.LogoutResponse)(nil),                    // 12: messages.user.LogoutResponse
-	(*delete_device.DeleteDeviceResponse)(nil),     // 13: messages.delete_device.DeleteDeviceResponse
-	(*update_device.UpdateDeviceResponse)(nil),     // 14: messages.update_device.UpdateDeviceResponse
-	(*watering_log.CreateWateringLogResponse)(nil), // 15: messages.log.CreateWateringLogResponse
+	(*device.EditDeviceNameRequest)(nil),           // 8: messages.device.EditDeviceNameRequest
+	(*user.LoginResponse)(nil),                     // 9: messages.user.LoginResponse
+	(*device.CreateDeviceResponse)(nil),            // 10: messages.device.CreateDeviceResponse
+	(*device_log.GetDeviceLogResponse)(nil),        // 11: messages.device_log.GetDeviceLogResponse
+	(*device_list.GetDeviceListResponse)(nil),      // 12: messages.device_list.GetDeviceListResponse
+	(*user.LogoutResponse)(nil),                    // 13: messages.user.LogoutResponse
+	(*delete_device.DeleteDeviceResponse)(nil),     // 14: messages.delete_device.DeleteDeviceResponse
+	(*update_device.UpdateDeviceResponse)(nil),     // 15: messages.update_device.UpdateDeviceResponse
+	(*watering_log.CreateWateringLogResponse)(nil), // 16: messages.log.CreateWateringLogResponse
+	(*device.EditDeviceNameResponse)(nil),          // 17: messages.device.EditDeviceNameResponse
 }
 var file_services_farm_proto_depIdxs = []int32{
 	0,  // 0: service.farm.Farm.Login:input_type -> messages.user.LoginRequest
@@ -144,16 +154,18 @@ var file_services_farm_proto_depIdxs = []int32{
 	5,  // 5: service.farm.Farm.DeleteDevice:input_type -> messages.delete_device.DeleteDeviceRequest
 	6,  // 6: service.farm.Farm.UpdateDevice:input_type -> messages.update_device.UpdateDeviceRequest
 	7,  // 7: service.farm.Farm.CreateWateringLog:input_type -> messages.log.CreateWateringLogRequest
-	8,  // 8: service.farm.Farm.Login:output_type -> messages.user.LoginResponse
-	9,  // 9: service.farm.Farm.CreateDevice:output_type -> messages.device.CreateDeviceResponse
-	10, // 10: service.farm.Farm.GetDeviceLog:output_type -> messages.device_log.GetDeviceLogResponse
-	11, // 11: service.farm.Farm.GetDeviceList:output_type -> messages.device_list.GetDeviceListResponse
-	12, // 12: service.farm.Farm.Logout:output_type -> messages.user.LogoutResponse
-	13, // 13: service.farm.Farm.DeleteDevice:output_type -> messages.delete_device.DeleteDeviceResponse
-	14, // 14: service.farm.Farm.UpdateDevice:output_type -> messages.update_device.UpdateDeviceResponse
-	15, // 15: service.farm.Farm.CreateWateringLog:output_type -> messages.log.CreateWateringLogResponse
-	8,  // [8:16] is the sub-list for method output_type
-	0,  // [0:8] is the sub-list for method input_type
+	8,  // 8: service.farm.Farm.EditDeviceName:input_type -> messages.device.EditDeviceNameRequest
+	9,  // 9: service.farm.Farm.Login:output_type -> messages.user.LoginResponse
+	10, // 10: service.farm.Farm.CreateDevice:output_type -> messages.device.CreateDeviceResponse
+	11, // 11: service.farm.Farm.GetDeviceLog:output_type -> messages.device_log.GetDeviceLogResponse
+	12, // 12: service.farm.Farm.GetDeviceList:output_type -> messages.device_list.GetDeviceListResponse
+	13, // 13: service.farm.Farm.Logout:output_type -> messages.user.LogoutResponse
+	14, // 14: service.farm.Farm.DeleteDevice:output_type -> messages.delete_device.DeleteDeviceResponse
+	15, // 15: service.farm.Farm.UpdateDevice:output_type -> messages.update_device.UpdateDeviceResponse
+	16, // 16: service.farm.Farm.CreateWateringLog:output_type -> messages.log.CreateWateringLogResponse
+	17, // 17: service.farm.Farm.EditDeviceName:output_type -> messages.device.EditDeviceNameResponse
+	9,  // [9:18] is the sub-list for method output_type
+	0,  // [0:9] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
@@ -203,6 +215,7 @@ type FarmClient interface {
 	DeleteDevice(ctx context.Context, in *delete_device.DeleteDeviceRequest, opts ...grpc.CallOption) (*delete_device.DeleteDeviceResponse, error)
 	UpdateDevice(ctx context.Context, in *update_device.UpdateDeviceRequest, opts ...grpc.CallOption) (*update_device.UpdateDeviceResponse, error)
 	CreateWateringLog(ctx context.Context, in *watering_log.CreateWateringLogRequest, opts ...grpc.CallOption) (*watering_log.CreateWateringLogResponse, error)
+	EditDeviceName(ctx context.Context, in *device.EditDeviceNameRequest, opts ...grpc.CallOption) (*device.EditDeviceNameResponse, error)
 }
 
 type farmClient struct {
@@ -285,6 +298,15 @@ func (c *farmClient) CreateWateringLog(ctx context.Context, in *watering_log.Cre
 	return out, nil
 }
 
+func (c *farmClient) EditDeviceName(ctx context.Context, in *device.EditDeviceNameRequest, opts ...grpc.CallOption) (*device.EditDeviceNameResponse, error) {
+	out := new(device.EditDeviceNameResponse)
+	err := c.cc.Invoke(ctx, "/service.farm.Farm/EditDeviceName", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FarmServer is the server API for Farm service.
 type FarmServer interface {
 	Login(context.Context, *user.LoginRequest) (*user.LoginResponse, error)
@@ -295,6 +317,7 @@ type FarmServer interface {
 	DeleteDevice(context.Context, *delete_device.DeleteDeviceRequest) (*delete_device.DeleteDeviceResponse, error)
 	UpdateDevice(context.Context, *update_device.UpdateDeviceRequest) (*update_device.UpdateDeviceResponse, error)
 	CreateWateringLog(context.Context, *watering_log.CreateWateringLogRequest) (*watering_log.CreateWateringLogResponse, error)
+	EditDeviceName(context.Context, *device.EditDeviceNameRequest) (*device.EditDeviceNameResponse, error)
 }
 
 // UnimplementedFarmServer can be embedded to have forward compatible implementations.
@@ -324,6 +347,9 @@ func (*UnimplementedFarmServer) UpdateDevice(context.Context, *update_device.Upd
 }
 func (*UnimplementedFarmServer) CreateWateringLog(context.Context, *watering_log.CreateWateringLogRequest) (*watering_log.CreateWateringLogResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWateringLog not implemented")
+}
+func (*UnimplementedFarmServer) EditDeviceName(context.Context, *device.EditDeviceNameRequest) (*device.EditDeviceNameResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EditDeviceName not implemented")
 }
 
 func RegisterFarmServer(s *grpc.Server, srv FarmServer) {
@@ -474,6 +500,24 @@ func _Farm_CreateWateringLog_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Farm_EditDeviceName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(device.EditDeviceNameRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FarmServer).EditDeviceName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.farm.Farm/EditDeviceName",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FarmServer).EditDeviceName(ctx, req.(*device.EditDeviceNameRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Farm_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "service.farm.Farm",
 	HandlerType: (*FarmServer)(nil),
@@ -509,6 +553,10 @@ var _Farm_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateWateringLog",
 			Handler:    _Farm_CreateWateringLog_Handler,
+		},
+		{
+			MethodName: "EditDeviceName",
+			Handler:    _Farm_EditDeviceName_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -67,4 +67,11 @@ service Farm {
       body: "*"
     };
   }
+
+  rpc EditDeviceName (messages.device.EditDeviceNameRequest) returns (messages.device.EditDeviceNameResponse) {
+    option (google.api.http) = {
+      post: "/device/edit-name"
+      body: "*"
+    };
+  }
 }
