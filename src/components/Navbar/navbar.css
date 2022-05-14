@@ -5,7 +5,10 @@
 .navbar {
     height: 96px;
     background-color: var(--navColor);
+    position: fixed;
+    width: 100%;
     z-index: 1000;
+
 } 
 
 .dropdown-item{

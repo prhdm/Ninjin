@@ -8,7 +8,8 @@ const Profile = () => {
     return (
         <>
             <NavbarComp />
-            <Form dir="rtl">
+            <span className="gap"></span>
+            <Form className="profile-page" dir="rtl">
                 <div  className ="profile-edit">
                     <UserAvatar />
                 </div>

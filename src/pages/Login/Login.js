@@ -45,7 +45,7 @@ const Login = ({ setToken }) => {
 
     return (
         <React.Fragment>            
-            <form dir="rtl" className="ui form" onSubmit={handleSubmit}>
+            <form  className="ui form" onSubmit={handleSubmit}>
                 <h1>ninjin</h1>
                 
                 <img className="logo ninjin" src={usagiLogo} alt="Ninjin logo. logo"/>

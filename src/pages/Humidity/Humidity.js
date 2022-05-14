@@ -1,6 +1,6 @@
 import React from "react";
 import NavbarComp from "../../components/Navbar/NavbarComp";
-import { ListGroup, Badge, InputGroup, FormControl, Button} from 'react-bootstrap';
+import { InputGroup, FormControl, Button} from 'react-bootstrap';
 import "./humidity.css";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
 
@@ -10,11 +10,11 @@ const Humidity = () => {
         <>
             <NavbarComp />
             <span className="gap"></span>
+            
             <div className="page-title">
                 تنظیم رطوبت
             </div>
             <InputGroup className="mb-3 humidity-input" size="lg">
-                {/* <InputGroup.Text>تنظیم رطوبت</InputGroup.Text> */}
                 <FormControl aria-label="First name" placeholder="نام دستگاه" />
             </InputGroup>
 

@@ -5,6 +5,10 @@ const Report = () => {
     return (
         <>
             <NavbarComp />
+            <span className="gap"></span>
+            <div className="page-title">
+               گزارش
+            </div>
         </>
     );
 }
