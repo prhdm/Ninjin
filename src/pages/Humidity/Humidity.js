@@ -10,8 +10,9 @@ const Humidity = () => {
         <>
             <NavbarComp />
             <span className="gap"></span>
-            {/* <span className="gap"></span> */}
-            <h3 className="humidity-title ml-3">تنظیم رطوبت</h3>
+            <div className="page-title">
+                تنظیم رطوبت
+            </div>
             <InputGroup className="mb-3 humidity-input" size="lg">
                 {/* <InputGroup.Text>تنظیم رطوبت</InputGroup.Text> */}
                 <FormControl aria-label="First name" placeholder="نام دستگاه" />

@@ -1,9 +1,11 @@
 * {
     direction: rtl;
 }
-h3.humidity-title {
+.page-title {
     padding: 10px;
     text-align: center;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 .humidity-input {

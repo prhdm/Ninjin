@@ -5,7 +5,10 @@ const Warning = () => {
     return (
         <>
             <NavbarComp />
-        
+            <span className="gap"></span>
+            <div className="page-title">
+                هشدارها
+            </div>
         </>
     );
 }

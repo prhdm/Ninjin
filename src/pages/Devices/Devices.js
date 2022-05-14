@@ -8,7 +8,11 @@ const Devices = () => {
     return (
         <>
             <NavbarComp />
+            
             <span className="gap"></span>
+            <div className="page-title">
+                دستگاه‌ها
+            </div>
 
             <InputGroup dir="rtl" className="mb-3 add-device">
                 <FormControl dir="rtl"
