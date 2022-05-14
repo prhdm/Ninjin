@@ -62,3 +62,18 @@ form {
     border-radius: 4em;
 }
 
+button.login {
+    background-color: #ed9121;
+    border: #ed9121;
+    color: #fff;
+}
+
+button.edit {
+    padding: 4.35px;
+}
+
+button.login:hover {
+    background-color: #a56426;
+}
+
+

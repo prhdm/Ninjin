@@ -1,0 +1,15 @@
+* {
+    direction: rtl;
+}
+h3.humidity-title {
+    padding: 10px;
+    text-align: center;
+}
+
+.humidity-input {
+    width: 40%;
+    padding: 0rem;
+    margin: 0 auto;
+}
+
+
