@@ -16,6 +16,16 @@ message CreateDeviceResponse {
   string error_message = 2;
 }
 
+message EditDeviceNameRequest {
+  string device_serial = 1;
+  string new_name = 2;
+}
+
+message EditDeviceNameResponse {
+  bool status = 1;
+  string error_message = 2;
+}
+
 message Device {
   string device_serial = 1;
   string device_name = 2;
