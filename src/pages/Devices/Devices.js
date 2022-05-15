@@ -1,26 +1,32 @@
 import React, { useState, useEffect } from "react";
 import NavbarComp from "../../components/Navbar/NavbarComp";
-import { ListGroup, Badge, InputGroup, FormControl, Button} from 'react-bootstrap';
+import { ListGroup, InputGroup, FormControl, Button} from 'react-bootstrap';
 import "./devices.css";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
+import axios from 'axios';
+import useToken from "../../components/App/useToken";
 
-// usagi.carriot.ir/device/device_list -> device list
+//https://jsonplaceholder.typicode.com/users
 const Devices = () => {
-    const [Users, fetchUsers] = useState([])
+    const url = 'http://usagi.carriot.ir/device/device_list';
+    const [users, setUsers] = useState([])
+    const token = useToken().token;
 
-    const getData = () => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-          .then((res) => res.json())
-          .then((res) => {
-            console.log(res)
-            fetchUsers(res)
-          })
+    const fetchData = () => {
+        console.log(token)
+        axios.get(url, {
+            headers: {
+              Authorization: 'Bearer ' + token //the token is a variable which holds the token
+            }
+           }).then(response => {
+          setUsers(response.data)
+          console.log(response.data)
+        })
       }
-    
+
       useEffect(() => {
-        getData()
+        fetchData()
       }, [])
-    
 
     return (
         <>
@@ -35,8 +41,14 @@ const Devices = () => {
                 <InputGroup.Text id="basic-addon1">
                 افرزودن دستگاه جدید
                 </InputGroup.Text>
+                
                 <FormControl dir="rtl"
                 placeholder="نام دستگاه"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+                />
+                <FormControl dir="rtl"
+                placeholder="تلفن"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
                 />
@@ -46,7 +58,7 @@ const Devices = () => {
             </InputGroup>
 
             <ListGroup as="ol" numbered>
-                {Users.map((item, i) => {
+                {users.map(item => {
                 return (
                     <>
                     <ListGroup.Item
@@ -55,12 +67,12 @@ const Devices = () => {
                     >
                         <div className="ms-2 me-auto">
                             <div className="fw-bold">
-                            {item.name}
+                            {"name:\t"+item.deviceName}
                             </div>
                             <div>
-                            {item.username}
+                            {"serial:\t" + item.deviceSerial}
                             </div>
-                            {item.phone}
+                            {"phone:\t" + item.phone}
                         </div>
                     </ListGroup.Item>
                     </>
