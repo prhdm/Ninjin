@@ -19,7 +19,7 @@ const Devices = () => {
               Authorization: 'Bearer ' + token //the token is a variable which holds the token
             }
            }).then(response => {
-          setUsers(response.data)
+          setUsers(response.data.devices)
           console.log(response.data)
         })
       }
