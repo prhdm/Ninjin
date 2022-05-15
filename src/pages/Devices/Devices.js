@@ -6,27 +6,47 @@ import "bootstrap/dist/css/bootstrap.rtl.min.css";
 import axios from 'axios';
 import useToken from "../../components/App/useToken";
 
-//https://jsonplaceholder.typicode.com/users
 const Devices = () => {
-    const url = 'http://usagi.carriot.ir/device/device_list';
-    const [users, setUsers] = useState([])
+    const url_getAllDevice = 'http://usagi.carriot.ir/device/device_list';
+    const url_deleteDevice = "http://usagi.carriot.ir/device/delete_device";
+    const [devices, setdevices] = useState([])
+    // const [deviceSerial, setDeviceSerial] = useState({})
     const token = useToken().token;
+
 
     const fetchData = () => {
         console.log(token)
-        axios.get(url, {
+        axios.get(url_getAllDevice, {
             headers: {
-              Authorization: 'Bearer ' + token //the token is a variable which holds the token
+              Authorization: 'Bearer ' + token
             }
            }).then(response => {
-          setUsers(response.data.devices)
+          setdevices(response.data.devices)
           console.log(response.data)
         })
-      }
+      };
+      
 
       useEffect(() => {
         fetchData()
-      }, [])
+      }, []);
+
+      const deleteDevice = (serial) => {
+        const deviceData = JSON.stringify({
+            "deviceSerial" : serial
+        });
+
+        axios.post(url_deleteDevice, deviceData , {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+              } 
+        })        
+        .then((response) => {
+            console.log(response)
+        });
+      }
+
 
     return (
         <>
@@ -48,6 +68,11 @@ const Devices = () => {
                 aria-describedby="basic-addon2"
                 />
                 <FormControl dir="rtl"
+                placeholder="سریال دستگاه"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+                />
+                <FormControl dir="rtl"
                 placeholder="تلفن"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
@@ -58,7 +83,7 @@ const Devices = () => {
             </InputGroup>
 
             <ListGroup as="ol" numbered>
-                {users.map(item => {
+                {devices.map(item => {
                 return (
                     <>
                     <ListGroup.Item
@@ -67,13 +92,16 @@ const Devices = () => {
                     >
                         <div className="ms-2 me-auto">
                             <div className="fw-bold">
-                            {"name:\t"+item.deviceName}
+                            {"نام دستگاه:\t"+item.deviceName}
                             </div>
                             <div>
-                            {"serial:\t" + item.deviceSerial}
+                            {"سریال:\t" + item.deviceSerial}
                             </div>
-                            {"phone:\t" + item.phone}
+                            {"تلفن:\t" + item.phone}
                         </div>
+                        <Button onClick={() => deleteDevice(item.deviceSerial)} variant="outline-secondary" id="button-addon2" className="add-device-btn">
+                            حذف
+                        </Button>
                     </ListGroup.Item>
                     </>
                 );
