@@ -43,7 +43,7 @@ func CreateDBProvider(config configs.DatabaseConfiguration) (DBProvider, error) 
 func (provider *DBProvider) MigrateDB() error {
 	provider.DB.LogMode(true)
 	err := provider.DB.AutoMigrate(&Farm{}, &User{},
-		&Device{}, &DeviceLog{}, &AuthToken{}, &WateringLog{}).Error
+		&Device{}, &DeviceLog{}, &AuthToken{}, &WateringLog{}, &Warning{}, &WarningLog{}).Error
 	if err != nil {
 		return err
 	}

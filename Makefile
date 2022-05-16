@@ -31,7 +31,6 @@ GOGET=GO111MODULE=on $(GOCMD) "get"
 BUILD_DIRECTORY=build
 BUILD_PATH=git.carriot.ir/
 PROJECT_PATH=git.carriot.ir/farm/
-
 BUILD_PROTO_DIRECTORY=../
 GOOGLE_APIS_DIR="$$(find $(GOPATH) -wholename "*github.com/grpc-ecosystem/grpc-gateway*/third_party/googleapis" 2>/dev/null | head -n 1)"
 PROTOC_IMPORT_PATH=-I${GOOGLE_APIS_DIR} -I $$PWD/proto -I/usr/local/include
