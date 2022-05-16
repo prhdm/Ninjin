@@ -12,5 +12,5 @@ func (f FarmServer) DeleteDevice(ctx context.Context, request *pb_delete_device.
 	err := models.DeleteDevice(request.DeviceSerial)
 	return &pb_delete_device.DeleteDeviceResponse{
 		Status: err == nil,
-	}, err
+	}, nil
 }
