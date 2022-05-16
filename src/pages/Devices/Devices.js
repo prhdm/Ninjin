@@ -9,13 +9,20 @@ import useToken from "../../components/App/useToken";
 const Devices = () => {
     const url_getAllDevice = 'http://usagi.carriot.ir/device/device_list';
     const url_deleteDevice = "http://usagi.carriot.ir/device/delete_device";
+    const url_addDevice = "http://usagi.carriot.ir/device/create";
     const [devices, setdevices] = useState([])
-    // const [deviceSerial, setDeviceSerial] = useState({})
+    const [newDevice, setNewDevice] = useState({
+        device_serial: "",
+        device_name: "",
+        phone: "",
+        farm_id: 1
+
+    })
     const token = useToken().token;
 
 
     const fetchData = () => {
-        console.log(token)
+        // console.log(token)
         axios.get(url_getAllDevice, {
             headers: {
               Authorization: 'Bearer ' + token
@@ -47,6 +54,24 @@ const Devices = () => {
         });
       }
 
+      const addNewDevice = () =>{
+        const deviceData = JSON.stringify({
+            "device_serial" : "4933",
+            "device_name" : "sara",
+            "phone" : 3,
+            "farm_id" : 1
+        });
+
+        axios.post(url_addDevice, deviceData , {
+            headers: {
+                'Authorization': `Bearer ${token}`
+              } 
+        })        
+        .then((response) => {
+            console.log(response)
+        });
+
+      }
 
     return (
         <>
@@ -64,20 +89,24 @@ const Devices = () => {
                 
                 <FormControl dir="rtl"
                 placeholder="نام دستگاه"
+                name="deviceName"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
+                onClick={() => deleteDevice(addNewDevice)}
                 />
                 <FormControl dir="rtl"
                 placeholder="سریال دستگاه"
+                name="deviceSerial"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
                 />
                 <FormControl dir="rtl"
                 placeholder="تلفن"
+                name="phone"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
                 />
-                <Button variant="outline-secondary" id="button-addon2" className="add-device-btn">
+                <Button onClick={() => addNewDevice()} variant="outline-secondary" id="button-addon2" className="add-device-btn">
                 افرزودن
                 </Button>
             </InputGroup>
