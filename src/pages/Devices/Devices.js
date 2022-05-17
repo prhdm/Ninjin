@@ -66,6 +66,7 @@ const Devices = () => {
         })        
         .then((response) => {
             console.log(response)
+            window.location.reload(true)
         });
       }
 
