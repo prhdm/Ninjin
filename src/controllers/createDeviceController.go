@@ -13,7 +13,7 @@ func (f FarmServer) CreateDevice(ctx context.Context, request *pb_device.CreateD
 		DeviceSerial: request.DeviceSerial,
 		DeviceName:   request.DeviceName,
 		Phone:        request.Phone,
-		FarmID: uint(request.FarmId),
+		FarmID: ctx.Value("farm_id").(uint),
 	}
 	errMessage := models.CreateDevice(device)
 	var status bool
