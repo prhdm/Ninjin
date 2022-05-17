@@ -5,7 +5,7 @@ import (
 )
 
 type Warning struct {
-	DeviceSerial string  `gorm:"column:device_serial"`
+	DeviceSerial string  `gorm:"column:device_serial;unique_index;"`
 	MinHumidity  float32 `gorm:"column:min_humidity"`
 	MaxHumidity  float32 `gorm:"column:max_humidity"`
 }
