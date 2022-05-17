@@ -53,7 +53,7 @@ var file_services_farm_proto_rawDesc = []byte{
 	0x5f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x68, 0x75, 0x6d, 0x69, 0x64, 0x69, 0x74, 0x79,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x22, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73,
 	0x2f, 0x73, 0x65, 0x74, 0x5f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x68, 0x75, 0x6d, 0x69,
-	0x64, 0x69, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xb2, 0x0a, 0x0a, 0x04, 0x46,
+	0x64, 0x69, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xb6, 0x0b, 0x0a, 0x04, 0x46,
 	0x61, 0x72, 0x6d, 0x12, 0x55, 0x0a, 0x05, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x12, 0x1b, 0x2e, 0x6d,
 	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x4c, 0x6f, 0x67,
 	0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x6d, 0x65, 0x73, 0x73,
@@ -136,10 +136,18 @@ var file_services_farm_proto_rawDesc = []byte{
 	0x64, 0x69, 0x74, 0x79, 0x2e, 0x53, 0x65, 0x74, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x48, 0x75,
 	0x6d, 0x69, 0x64, 0x69, 0x74, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1f,
 	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x19, 0x22, 0x14, 0x2f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x2f,
-	0x73, 0x65, 0x74, 0x5f, 0x68, 0x75, 0x6d, 0x69, 0x64, 0x69, 0x74, 0x79, 0x3a, 0x01, 0x2a, 0x42,
-	0x1d, 0x5a, 0x1b, 0x66, 0x61, 0x72, 0x6d, 0x2f, 0x73, 0x72, 0x63, 0x2f, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x66, 0x61, 0x72, 0x6d, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x65, 0x74, 0x5f, 0x68, 0x75, 0x6d, 0x69, 0x64, 0x69, 0x74, 0x79, 0x3a, 0x01, 0x2a, 0x12,
+	0x81, 0x01, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x57, 0x61, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x4c,
+	0x6f, 0x67, 0x12, 0x27, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2e, 0x6c, 0x6f,
+	0x67, 0x2e, 0x47, 0x65, 0x74, 0x57, 0x61, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x4c, 0x6f, 0x67,
+	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x6d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x2e, 0x6c, 0x6f, 0x67, 0x2e, 0x47, 0x65, 0x74, 0x57, 0x61,
+	0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x4c, 0x6f, 0x67, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x16, 0x22, 0x11, 0x2f,
+	0x77, 0x61, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x2d, 0x6c, 0x6f, 0x67, 0x2f, 0x67, 0x65, 0x74,
+	0x3a, 0x01, 0x2a, 0x42, 0x1d, 0x5a, 0x1b, 0x66, 0x61, 0x72, 0x6d, 0x2f, 0x73, 0x72, 0x63, 0x2f,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x66, 0x61,
+	0x72, 0x6d, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var file_services_farm_proto_goTypes = []interface{}{
@@ -153,16 +161,18 @@ var file_services_farm_proto_goTypes = []interface{}{
 	(*device.EditDeviceNameRequest)(nil),                        // 7: messages.device.EditDeviceNameRequest
 	(*update_device_humidity.UpdateDeviceHumidityRequest)(nil),  // 8: messages.update_device_humidity.UpdateDeviceHumidityRequest
 	(*set_device_humidity.SetDeviceHumidityRequest)(nil),        // 9: messages.set_device_humidity.SetDeviceHumidityRequest
-	(*user.LoginResponse)(nil),                                  // 10: messages.user.LoginResponse
-	(*device.CreateDeviceResponse)(nil),                         // 11: messages.device.CreateDeviceResponse
-	(*device_log.GetDeviceLogResponse)(nil),                     // 12: messages.device_log.GetDeviceLogResponse
-	(*device_list.GetDeviceListResponse)(nil),                   // 13: messages.device_list.GetDeviceListResponse
-	(*user.LogoutResponse)(nil),                                 // 14: messages.user.LogoutResponse
-	(*delete_device.DeleteDeviceResponse)(nil),                  // 15: messages.delete_device.DeleteDeviceResponse
-	(*watering_log.CreateWateringLogResponse)(nil),              // 16: messages.log.CreateWateringLogResponse
-	(*device.EditDeviceNameResponse)(nil),                       // 17: messages.device.EditDeviceNameResponse
-	(*update_device_humidity.UpdateDeviceHumidityResponse)(nil), // 18: messages.update_device_humidity.UpdateDeviceHumidityResponse
-	(*set_device_humidity.SetDeviceHumidityResponse)(nil),       // 19: messages.set_device_humidity.SetDeviceHumidityResponse
+	(*watering_log.GetWateringLogListRequest)(nil),              // 10: messages.log.GetWateringLogListRequest
+	(*user.LoginResponse)(nil),                                  // 11: messages.user.LoginResponse
+	(*device.CreateDeviceResponse)(nil),                         // 12: messages.device.CreateDeviceResponse
+	(*device_log.GetDeviceLogResponse)(nil),                     // 13: messages.device_log.GetDeviceLogResponse
+	(*device_list.GetDeviceListResponse)(nil),                   // 14: messages.device_list.GetDeviceListResponse
+	(*user.LogoutResponse)(nil),                                 // 15: messages.user.LogoutResponse
+	(*delete_device.DeleteDeviceResponse)(nil),                  // 16: messages.delete_device.DeleteDeviceResponse
+	(*watering_log.CreateWateringLogResponse)(nil),              // 17: messages.log.CreateWateringLogResponse
+	(*device.EditDeviceNameResponse)(nil),                       // 18: messages.device.EditDeviceNameResponse
+	(*update_device_humidity.UpdateDeviceHumidityResponse)(nil), // 19: messages.update_device_humidity.UpdateDeviceHumidityResponse
+	(*set_device_humidity.SetDeviceHumidityResponse)(nil),       // 20: messages.set_device_humidity.SetDeviceHumidityResponse
+	(*watering_log.GetWateringLogListResponse)(nil),             // 21: messages.log.GetWateringLogListResponse
 }
 var file_services_farm_proto_depIdxs = []int32{
 	0,  // 0: service.farm.Farm.Login:input_type -> messages.user.LoginRequest
@@ -175,18 +185,20 @@ var file_services_farm_proto_depIdxs = []int32{
 	7,  // 7: service.farm.Farm.EditDeviceName:input_type -> messages.device.EditDeviceNameRequest
 	8,  // 8: service.farm.Farm.UpdateDeviceHumidity:input_type -> messages.update_device_humidity.UpdateDeviceHumidityRequest
 	9,  // 9: service.farm.Farm.SetDeviceHumidity:input_type -> messages.set_device_humidity.SetDeviceHumidityRequest
-	10, // 10: service.farm.Farm.Login:output_type -> messages.user.LoginResponse
-	11, // 11: service.farm.Farm.CreateDevice:output_type -> messages.device.CreateDeviceResponse
-	12, // 12: service.farm.Farm.GetDeviceLog:output_type -> messages.device_log.GetDeviceLogResponse
-	13, // 13: service.farm.Farm.GetDeviceList:output_type -> messages.device_list.GetDeviceListResponse
-	14, // 14: service.farm.Farm.Logout:output_type -> messages.user.LogoutResponse
-	15, // 15: service.farm.Farm.DeleteDevice:output_type -> messages.delete_device.DeleteDeviceResponse
-	16, // 16: service.farm.Farm.CreateWateringLog:output_type -> messages.log.CreateWateringLogResponse
-	17, // 17: service.farm.Farm.EditDeviceName:output_type -> messages.device.EditDeviceNameResponse
-	18, // 18: service.farm.Farm.UpdateDeviceHumidity:output_type -> messages.update_device_humidity.UpdateDeviceHumidityResponse
-	19, // 19: service.farm.Farm.SetDeviceHumidity:output_type -> messages.set_device_humidity.SetDeviceHumidityResponse
-	10, // [10:20] is the sub-list for method output_type
-	0,  // [0:10] is the sub-list for method input_type
+	10, // 10: service.farm.Farm.GetWateringLog:input_type -> messages.log.GetWateringLogListRequest
+	11, // 11: service.farm.Farm.Login:output_type -> messages.user.LoginResponse
+	12, // 12: service.farm.Farm.CreateDevice:output_type -> messages.device.CreateDeviceResponse
+	13, // 13: service.farm.Farm.GetDeviceLog:output_type -> messages.device_log.GetDeviceLogResponse
+	14, // 14: service.farm.Farm.GetDeviceList:output_type -> messages.device_list.GetDeviceListResponse
+	15, // 15: service.farm.Farm.Logout:output_type -> messages.user.LogoutResponse
+	16, // 16: service.farm.Farm.DeleteDevice:output_type -> messages.delete_device.DeleteDeviceResponse
+	17, // 17: service.farm.Farm.CreateWateringLog:output_type -> messages.log.CreateWateringLogResponse
+	18, // 18: service.farm.Farm.EditDeviceName:output_type -> messages.device.EditDeviceNameResponse
+	19, // 19: service.farm.Farm.UpdateDeviceHumidity:output_type -> messages.update_device_humidity.UpdateDeviceHumidityResponse
+	20, // 20: service.farm.Farm.SetDeviceHumidity:output_type -> messages.set_device_humidity.SetDeviceHumidityResponse
+	21, // 21: service.farm.Farm.GetWateringLog:output_type -> messages.log.GetWateringLogListResponse
+	11, // [11:22] is the sub-list for method output_type
+	0,  // [0:11] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
@@ -238,6 +250,7 @@ type FarmClient interface {
 	EditDeviceName(ctx context.Context, in *device.EditDeviceNameRequest, opts ...grpc.CallOption) (*device.EditDeviceNameResponse, error)
 	UpdateDeviceHumidity(ctx context.Context, in *update_device_humidity.UpdateDeviceHumidityRequest, opts ...grpc.CallOption) (*update_device_humidity.UpdateDeviceHumidityResponse, error)
 	SetDeviceHumidity(ctx context.Context, in *set_device_humidity.SetDeviceHumidityRequest, opts ...grpc.CallOption) (*set_device_humidity.SetDeviceHumidityResponse, error)
+	GetWateringLog(ctx context.Context, in *watering_log.GetWateringLogListRequest, opts ...grpc.CallOption) (*watering_log.GetWateringLogListResponse, error)
 }
 
 type farmClient struct {
@@ -338,6 +351,15 @@ func (c *farmClient) SetDeviceHumidity(ctx context.Context, in *set_device_humid
 	return out, nil
 }
 
+func (c *farmClient) GetWateringLog(ctx context.Context, in *watering_log.GetWateringLogListRequest, opts ...grpc.CallOption) (*watering_log.GetWateringLogListResponse, error) {
+	out := new(watering_log.GetWateringLogListResponse)
+	err := c.cc.Invoke(ctx, "/service.farm.Farm/GetWateringLog", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FarmServer is the server API for Farm service.
 type FarmServer interface {
 	Login(context.Context, *user.LoginRequest) (*user.LoginResponse, error)
@@ -350,6 +372,7 @@ type FarmServer interface {
 	EditDeviceName(context.Context, *device.EditDeviceNameRequest) (*device.EditDeviceNameResponse, error)
 	UpdateDeviceHumidity(context.Context, *update_device_humidity.UpdateDeviceHumidityRequest) (*update_device_humidity.UpdateDeviceHumidityResponse, error)
 	SetDeviceHumidity(context.Context, *set_device_humidity.SetDeviceHumidityRequest) (*set_device_humidity.SetDeviceHumidityResponse, error)
+	GetWateringLog(context.Context, *watering_log.GetWateringLogListRequest) (*watering_log.GetWateringLogListResponse, error)
 }
 
 // UnimplementedFarmServer can be embedded to have forward compatible implementations.
@@ -385,6 +408,9 @@ func (*UnimplementedFarmServer) UpdateDeviceHumidity(context.Context, *update_de
 }
 func (*UnimplementedFarmServer) SetDeviceHumidity(context.Context, *set_device_humidity.SetDeviceHumidityRequest) (*set_device_humidity.SetDeviceHumidityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetDeviceHumidity not implemented")
+}
+func (*UnimplementedFarmServer) GetWateringLog(context.Context, *watering_log.GetWateringLogListRequest) (*watering_log.GetWateringLogListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetWateringLog not implemented")
 }
 
 func RegisterFarmServer(s *grpc.Server, srv FarmServer) {
@@ -571,6 +597,24 @@ func _Farm_SetDeviceHumidity_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Farm_GetWateringLog_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(watering_log.GetWateringLogListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FarmServer).GetWateringLog(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.farm.Farm/GetWateringLog",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FarmServer).GetWateringLog(ctx, req.(*watering_log.GetWateringLogListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Farm_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "service.farm.Farm",
 	HandlerType: (*FarmServer)(nil),
@@ -614,6 +658,10 @@ var _Farm_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetDeviceHumidity",
 			Handler:    _Farm_SetDeviceHumidity_Handler,
+		},
+		{
+			MethodName: "GetWateringLog",
+			Handler:    _Farm_GetWateringLog_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
