@@ -18,7 +18,7 @@ func (f FarmServer) GetDeviceLog(ctx context.Context, request *pb_device_log.Get
 		var deviceLog pb_device_log.DeviceLog
 		deviceLog = pb_device_log.DeviceLog{
 			DeviceSerial: row.DeviceSerial,
-			Datetime:     timestamppb.New(row.DeviceTime),
+			Datetime:     timestamppb.New(row.ServerTime),
 			Humidity:     int32(row.Humidity),
 			Temp:         int32(row.Temp),
 		}

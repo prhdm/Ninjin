@@ -5,6 +5,7 @@ import (
 	"farm/src/models"
 	pb_log "farm/src/proto/messages/watering_log"
 	log "github.com/sirupsen/logrus"
+	"time"
 )
 
 func (f FarmServer) CreateWateringLog(ctx context.Context, request *pb_log.CreateWateringLogRequest) (*pb_log.CreateWateringLogResponse, error) {
@@ -17,7 +18,7 @@ func (f FarmServer) CreateWateringLog(ctx context.Context, request *pb_log.Creat
 			ErrorMessage: "Device does not exist",
 		}, nil
 	}
-	time := request.GetTime().AsTime()
-	status, errMessage := models.CreateWateringLog(time, device, request.GetWaterAmount())
+	//time := request.GetTime().AsTime()
+	status, errMessage := models.CreateWateringLog(time.Now(), device, request.GetWaterAmount())
 	return &pb_log.CreateWateringLogResponse{Status: status, ErrorMessage: errMessage}, nil
 }

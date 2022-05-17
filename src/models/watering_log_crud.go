@@ -14,3 +14,11 @@ func CreateWateringLog(time time.Time ,device *Device, waterAmount float32) (boo
 	}
 	return true, ""
 }
+
+func GetWateringLog(DeviceSerial string, BeginTime time.Time, EndTime time.Time) ([]*WateringLog, error){
+	var wateringLogSlice []*WateringLog
+
+	result := PostgresDBProvider.DB.Where("device_serial = ? AND time >= ? AND time <= ?", DeviceSerial, BeginTime, EndTime).Find(&wateringLogSlice)
+
+	return wateringLogSlice, result.Error
+}
