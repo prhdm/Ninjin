@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package messages.warning;
+
+option go_package = "farm/src/proto/messages/warning";
+
+message WarningRequest {
+}
+
+message WarningResponse {
+  float difference=1;
+}

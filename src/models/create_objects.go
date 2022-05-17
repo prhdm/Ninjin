@@ -37,13 +37,18 @@ func CreateUser(username string, password string, farmID uint) error {
 	return nil
 }
 
-func CreateDeviceLog(serial string, humidity int32, deviceTime, serverTime time.Time) error{
+func CreateDeviceLog(serial string, humidity int32, deviceTime, serverTime time.Time) error {
 	deviceLog := &DeviceLog{
 		DeviceSerial: serial,
 		DeviceTime:   deviceTime,
 		ServerTime:   serverTime,
-		Humidity: float32(humidity),
-		Temp: 0,
+		Humidity:     float32(humidity),
+		Temp:         0,
+	}
+	err := warningLog(serial, humidity, deviceTime, serverTime)
+	if err != nil {
+		log.Info(err)
+		return err
 	}
 	createdDataLog := PostgresDBProvider.DB.Create(deviceLog)
 	if createdDataLog.Error != nil {
@@ -53,7 +58,35 @@ func CreateDeviceLog(serial string, humidity int32, deviceTime, serverTime time.
 	return nil
 }
 
-func CreateDevice(device *Device) error{
+func warningLog(serial string, humidity int32, deviceTime, serverTime time.Time) error {
+	var device Warning
+	if !PostgresDBProvider.DB.Where("device_serial = ?", serial).First(&device).RecordNotFound() {
+		difference := calculateDifference(float32(humidity), device.MinHumidity, device.MaxHumidity)
+		if difference != 0 {
+			warninglog := PostgresDBProvider.DB.Model(&Warning{}).Create(WarningLog{
+				DeviceSerial: serial,
+				DeviceTime:   deviceTime,
+				ServerTime:   serverTime,
+				Difference:   difference,
+			})
+			if warninglog.Error != nil {
+				return warninglog.Error
+			}
+		}
+	}
+	return nil
+}
+
+func calculateDifference(humidity float32, minHumidity float32, maxHumidity float32) float32 {
+	if maxHumidity < humidity {
+		return humidity - maxHumidity
+	} else if minHumidity > humidity {
+		return minHumidity - humidity
+	}
+	return 0
+}
+
+func CreateDevice(device *Device) error {
 	createdData := PostgresDBProvider.DB.Create(&device)
 	if createdData.Error != nil {
 		log.Info(createdData.Error)
@@ -61,4 +94,3 @@ func CreateDevice(device *Device) error{
 	}
 	return nil
 }
-

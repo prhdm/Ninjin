@@ -10,6 +10,7 @@ import "messages/delete_device.proto";
 import "messages/watering_log.proto";
 import "messages/update_device_humidity.proto";
 import "messages/set_device_humidity.proto";
+import "messages/warning.proto";
 
 option go_package = "farm/src/proto/service/farm";
 
@@ -82,4 +83,6 @@ service Farm {
       body: "*"
     };
   }
+
+  rpc Warning (messages.warning.WarningRequest) returns (stream messages.warning.WarningResponse) { }
 }
