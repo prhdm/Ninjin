@@ -7,9 +7,9 @@ import axios from 'axios';
 import useToken from "../../components/App/useToken";
 
 const Devices = () => {
-    const url_getAllDevice = 'http://usagi.carriot.ir/device/device_list';
-    const url_deleteDevice = "http://usagi.carriot.ir/device/delete_device";
-    const url_addDevice = "http://usagi.carriot.ir/device/create";
+    const url_getAllDevice = 'http://usagi.carriot.ir:8000/device/device_list';
+    const url_deleteDevice = "http://usagi.carriot.ir:8000/device/delete_device";
+    const url_addDevice = "http://usagi.carriot.ir:8000/device/create";
     const [devices, setdevices] = useState([])
     const [newDevice, setNewDevice] = useState({
         device_serial: "",
@@ -22,7 +22,6 @@ const Devices = () => {
 
 
     const fetchData = () => {
-        // console.log(token)
         axios.get(url_getAllDevice, {
             headers: {
               Authorization: 'Bearer ' + token
@@ -45,7 +44,6 @@ const Devices = () => {
 
         axios.post(url_deleteDevice, deviceData , {
             headers: {
-                'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
               } 
         })        
@@ -56,12 +54,11 @@ const Devices = () => {
 
       const addNewDevice = () =>{
         const deviceData = JSON.stringify({
-            "device_serial" : "4933",
-            "device_name" : "sara",
-            "phone" : 3,
-            "farm_id" : 1
+            "deviceSerial" : newDevice.device_serial,
+            "deviceName" : newDevice.device_name,
+            "phone" : newDevice.phone
         });
-
+        console.log(deviceData)
         axios.post(url_addDevice, deviceData , {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -70,7 +67,6 @@ const Devices = () => {
         .then((response) => {
             console.log(response)
         });
-
       }
 
     return (
@@ -93,18 +89,21 @@ const Devices = () => {
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
                 onClick={() => deleteDevice(addNewDevice)}
+                onChange={(e) => setNewDevice({...newDevice, device_name: e.target.value})}
                 />
                 <FormControl dir="rtl"
                 placeholder="سریال دستگاه"
                 name="deviceSerial"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
+                onChange={(e) => setNewDevice({...newDevice, device_serial: e.target.value})}
                 />
                 <FormControl dir="rtl"
                 placeholder="تلفن"
                 name="phone"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
+                onChange={(e) => setNewDevice({...newDevice, phone: e.target.value})}
                 />
                 <Button onClick={() => addNewDevice()} variant="outline-secondary" id="button-addon2" className="add-device-btn">
                 افرزودن
