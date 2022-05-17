@@ -17,3 +17,10 @@ type WarningLog struct {
 	Humidity     float32   `gorm:"column:humidity"`
 	Difference   float32   `gorm:"column:difference"`
 }
+
+func (Warning) TableName() string {
+	return "warning"
+}
+func (WarningLog) TableName() string {
+	return "warning_log"
+}

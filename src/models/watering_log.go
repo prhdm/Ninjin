@@ -12,3 +12,7 @@ type WateringLog struct {
 	Device Device
 	WaterAmount float32 `gorm:"column:water_amount"`
 }
+
+func (WateringLog) TableName() string {
+	return "watering_log"
+}
