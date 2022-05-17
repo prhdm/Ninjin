@@ -24,6 +24,7 @@ const Devices = () => {
         device_name: "",
         phone: "",
         farm_id: 1
+
     });
     const token = useToken().token;
 
@@ -84,7 +85,10 @@ const Devices = () => {
 
         });
       }
+///device/edit-name"
       const editDeviceName = () => {
+        console.log(deviceSerial)
+        console.log(deviceNewName.new_name)
         const deviceData = JSON.stringify({
             "device_serial" : deviceSerial,
             "new_name" : deviceNewName.new_name 
