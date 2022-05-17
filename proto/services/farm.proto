@@ -82,4 +82,11 @@ service Farm {
       body: "*"
     };
   }
+
+  rpc GetWateringLog (messages.log.GetWateringLogListRequest) returns (messages.log.GetWateringLogListResponse) {
+    option (google.api.http) = {
+      post: "/watering-log/get"
+      body: "*"
+    };
+  }
 }
