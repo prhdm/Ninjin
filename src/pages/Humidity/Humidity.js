@@ -64,7 +64,7 @@ const Humidity = () => {
                     تنظیم
                     </Button>
             </InputGroup>
-           
+
         </>
     );
 }
