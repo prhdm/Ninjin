@@ -25,7 +25,28 @@ const Humidity = () => {
                     تنظیم
                     </Button>
             </InputGroup>
-
+            <InputGroup dir="rtl" className="mb-3 humidity-input" size="lg">
+            <Form type="date" className="date-form">
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>تاریخ</Form.Label>
+                    <Form.Control type="date" placeholder="تاریخ" />
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>ساعت</Form.Label>
+                    <Form.Control type="time" placeholder="ساعت" />
+                </Form.Group>
+            </Form>
+            <Form type="date" className="date-form">
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>تاریخ</Form.Label>
+                    <Form.Control type="date" placeholder="تاریخ" />
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>ساعت</Form.Label>
+                    <Form.Control type="time" placeholder="ساعت" />
+                </Form.Group>
+            </Form>
+            </InputGroup>
         </>
     );
 }
