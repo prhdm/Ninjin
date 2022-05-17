@@ -22,13 +22,13 @@ function App() {
   }
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Devices />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/report" element={<Report />} />
       <Route path="/humidity" element={<Humidity />} />
       <Route path="/water" element={<Water />} />
-      <Route path="/devices" element={<Devices />} />
+      {/*<Route path="/devices" element={<Devices />} />*/}
       <Route path="/warnings" element={<Warning />} />
       
 

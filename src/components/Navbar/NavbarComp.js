@@ -1,9 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
-import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 import './navbar.css';
-import UserAvatar from "../UserAvatar/UserAvatar";
 
 const NavbarComp = () =>{
     
@@ -26,7 +25,7 @@ const NavbarComp = () =>{
             <Nav className="me-auto main-nav">
               {/* <Nav.Link href="/">داشبورد</Nav.Link> */}
               <Nav.Link href="/report">گزارش</Nav.Link>
-              <Nav.Link href="/devices">دستگاه‌ها</Nav.Link>
+              <Nav.Link href="/">دستگاه‌ها</Nav.Link>
               <Nav.Link href="/warnings">هشدارها</Nav.Link>
               {/* <NavDropdown title="تنظیمات" id="collasible-nav-dropdown"> */}
                 <Nav.Link href="/humidity">تنظیمات رطوبت</Nav.Link>
