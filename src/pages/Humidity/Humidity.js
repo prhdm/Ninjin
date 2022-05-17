@@ -47,17 +47,17 @@ const Humidity = () => {
             <InputGroup className="mb-3 humidity-input" size="lg">
                 <FormControl aria-label="First name"
                              placeholder="سریال دستگاه"
-                             onChange={(e) => setHumidity({...deviceHumidity, device_serial: e.target.value})}
+                             onChange={(e) => setDeviceHumidity({...deviceHumidity, device_serial: e.target.value})}
                              type="text"
                 />
             </InputGroup>
             <InputGroup dir="rtl" className="mb-3 humidity-input" size="lg">
                 <FormControl aria-label="min humidity" placeholder="حداقل رطوبت"
-                             onChange={(e) => setHumidity({...deviceHumidity, min_humidity: e.target.value})}
+                             onChange={(e) => setDeviceHumidity({...deviceHumidity, min_humidity: e.target.value})}
                              type="text" />
                 <FormControl aria-label="max humidity" placeholder="حداکثر رطوبت"
-                             onChange={(e) => setHumidity({...deviceHumidity, max_humidity: e.target.value})}
-                             type="text" />/>
+                             onChange={(e) => setDeviceHumidity({...deviceHumidity, max_humidity: e.target.value})}
+                             type="text" />
 
                     <Button variant="outline-secondary" id="button-addon2" className="add-device-btn"
                     onClick={() => setHumidity()}>
