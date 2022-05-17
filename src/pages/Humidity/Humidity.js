@@ -10,9 +10,9 @@ const Humidity = () => {
     const token = useToken().token;
 
     const [deviceHumidity, setDeviceHumidity] = useState({
-        device_serial: "",
-        min_humidity: "",
-        max_humidity: "",
+        device_serial: '',
+        min_humidity: '',
+        max_humidity: '',
     });
     const url_setHumidity = "http://usagi.carriot.ir:8000/device/set_humidity";
 
@@ -31,7 +31,8 @@ const Humidity = () => {
             }
         })
             .then((response) => {
-                window.location.reload(true)
+                console.log(response)
+                //window.location.reload(true)
 
             });
     }
