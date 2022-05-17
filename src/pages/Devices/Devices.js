@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavbarComp from "../../components/Navbar/NavbarComp";
-import { ListGroup, InputGroup, FormControl, Button} from 'react-bootstrap';
+import { ListGroup, InputGroup, FormControl, Button, Modal, Form} from 'react-bootstrap';
 import "./devices.css";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
 import axios from 'axios';
@@ -10,16 +10,32 @@ const Devices = () => {
     const url_getAllDevice = 'http://usagi.carriot.ir:8000/device/device_list';
     const url_deleteDevice = "http://usagi.carriot.ir:8000/device/delete_device";
     const url_addDevice = "http://usagi.carriot.ir:8000/device/create";
-    const [devices, setdevices] = useState([])
+    const url_editDevice = "http://usagi.carriot.ir:8000/device/edit-name"
+    const [devices, setdevices] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
+    const [deviceNewName, setDeviceNewName] = useState ({
+        device_serial:"",
+        new_name:""
+    });
+    const [deviceSerial, setDeviceSerial] = useState("")
+
     const [newDevice, setNewDevice] = useState({
         device_serial: "",
         device_name: "",
         phone: "",
         farm_id: 1
 
-    })
+    });
     const token = useToken().token;
 
+    const openModal = (serial) => {
+        setIsOpen(true);
+        console.log(isOpen);
+        setDeviceSerial(serial);
+      }
+      const closeModal = () => {
+          setIsOpen(false);
+        }
 
     const fetchData = () => {
         axios.get(url_getAllDevice, {
@@ -28,7 +44,6 @@ const Devices = () => {
             }
            }).then(response => {
           setdevices(response.data.devices)
-          console.log(response.data)
         })
       };
       
@@ -48,7 +63,8 @@ const Devices = () => {
               } 
         })        
         .then((response) => {
-            console.log(response)
+            console.log(response);
+            window.location.reload(true)
         });
       }
 
@@ -64,6 +80,24 @@ const Devices = () => {
                 'Authorization': `Bearer ${token}`
               } 
         })        
+        .then((response) => {
+            window.location.reload(true)
+
+        });
+      }
+///device/edit-name"
+      const editDeviceName = () => {
+        console.log(deviceSerial)
+        console.log(deviceNewName.new_name)
+        const deviceData = JSON.stringify({
+            "device_serial" : deviceSerial,
+            "new_name" : deviceNewName.new_name 
+        });
+        axios.post(url_editDevice, deviceData , {
+            headers: {
+                'Authorization': `Bearer ${token}`
+              } 
+        }) 
         .then((response) => {
             console.log(response)
             window.location.reload(true)
@@ -89,7 +123,6 @@ const Devices = () => {
                 name="deviceName"
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
-                onClick={() => deleteDevice(addNewDevice)}
                 onChange={(e) => setNewDevice({...newDevice, device_name: e.target.value})}
                 />
                 <FormControl dir="rtl"
@@ -128,10 +161,29 @@ const Devices = () => {
                             </div>
                             {"تلفن:\t" + item.phone}
                         </div>
+                        <Button onClick={() => openModal(item.deviceSerial)} variant="outline-secondary" id="button-addon2" className="add-device-btn">
+                            ویرایش
+                            
+                        </Button>
+                        <span style={{"margin": "2px"}}></span>
                         <Button onClick={() => deleteDevice(item.deviceSerial)} variant="outline-secondary" id="button-addon2" className="add-device-btn">
                             حذف
                         </Button>
+                        
                     </ListGroup.Item>
+
+                    <Modal show={isOpen} onHide={closeModal}>
+                        <Modal.Header closeButton>
+                        <Modal.Title>ویرایش نام دستگاه</Modal.Title>
+                        </Modal.Header>
+                        <Form.Control onChange={(e) => setDeviceNewName({...deviceNewName, new_name: e.target.value})} type="name" className="inputNewName" placeholder="نام جدید را وارد کنید" />
+                        <Modal.Footer>
+                        <Button  onClick={(e) => editDeviceName()} variant="outline-secondary" id="button-addon2" className="add-device-btn">
+                            ذخیره تغییرات
+                        </Button>
+                        </Modal.Footer>
+                    </Modal>
+                    
                     </>
                 );
                 })}
