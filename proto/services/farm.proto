@@ -8,7 +8,6 @@ import "messages/device_log.proto";
 import "messages/device_list.proto";
 import "messages/delete_device.proto";
 import "messages/watering_log.proto";
-import "messages/update_device_humidity.proto";
 import "messages/set_device_humidity.proto";
 import "messages/warning.proto";
 
@@ -66,13 +65,6 @@ service Farm {
   rpc EditDeviceName (messages.device.EditDeviceNameRequest) returns (messages.device.EditDeviceNameResponse) {
     option (google.api.http) = {
       post: "/device/edit-name"
-      body: "*"
-    };
-  }
-
-  rpc UpdateDeviceHumidity (messages.update_device_humidity.UpdateDeviceHumidityRequest) returns (messages.update_device_humidity.UpdateDeviceHumidityResponse) {
-    option (google.api.http) = {
-      post: "/device/update_humidity"
       body: "*"
     };
   }
