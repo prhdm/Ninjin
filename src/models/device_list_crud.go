@@ -1,7 +1,7 @@
 package models
 
-func GetDeviceList() ([]*Device, error) {
+func GetDeviceList(farmId uint) ([]*Device, error) {
 	var deviceListSlice []*Device
-	result := PostgresDBProvider.DB.Find(&deviceListSlice)
+	result := PostgresDBProvider.DB.Where("farm_id = ?", farmId).Find(&deviceListSlice)
 	return deviceListSlice, result.Error
 }

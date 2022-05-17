@@ -10,7 +10,7 @@ import (
 func (f FarmServer) GetDeviceList(ctx context.Context, request *pb_device_list.GetDeviceListRequest) (*pb_device_list.GetDeviceListResponse, error) {
 	log.Info("Receive message to get devicesList.")
 
-	devices, err := models.GetDeviceList()
+	devices, err := models.GetDeviceList(ctx.Value("farm_id").(uint))
 	if err != nil {
 		log.Info(err)
 	}

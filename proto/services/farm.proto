@@ -8,8 +8,8 @@ import "messages/device_log.proto";
 import "messages/device_list.proto";
 import "messages/delete_device.proto";
 import "messages/watering_log.proto";
-import "messages/update_device_humidity.proto";
 import "messages/set_device_humidity.proto";
+import "messages/warning.proto";
 
 option go_package = "farm/src/proto/service/farm";
 
@@ -69,19 +69,14 @@ service Farm {
     };
   }
 
-  rpc UpdateDeviceHumidity (messages.update_device_humidity.UpdateDeviceHumidityRequest) returns (messages.update_device_humidity.UpdateDeviceHumidityResponse) {
-    option (google.api.http) = {
-      post: "/device/update_humidity"
-      body: "*"
-    };
-  }
-
   rpc SetDeviceHumidity (messages.set_device_humidity.SetDeviceHumidityRequest) returns (messages.set_device_humidity.SetDeviceHumidityResponse) {
     option (google.api.http) = {
       post: "/device/set_humidity"
       body: "*"
     };
   }
+
+  rpc Warning (messages.warning.WarningRequest) returns (stream messages.warning.WarningResponse) { }
 
   rpc GetWateringLog (messages.log.GetWateringLogListRequest) returns (messages.log.GetWateringLogListResponse) {
     option (google.api.http) = {

@@ -5,7 +5,7 @@ func DeleteDevice(deviceSerial string) error {
 	if device.RecordNotFound() {
 		return device.Error
 	} else {
-		err := PostgresDBProvider.DB.Where("device_serial = ?", deviceSerial).Delete(&Device{}).Error
+		err := PostgresDBProvider.DB.Where("device_serial = ?", deviceSerial).Unscoped().Delete(&Device{}).Error
 		return err
 	}
 }
