@@ -5,15 +5,35 @@
 .navbar {
     height: 96px;
     background-color: var(--navColor);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
 } 
 
+.dropdown-item{
+    padding: 5px;
+}
 .logout {
     background-color: #ffbe7d;
-    margin-right: 15px;
+    position: fixed;
+    left: 150px;
+    top: 30px;
 }
 
-.avatar {
-    margin: 7px;
-    margin-left: 15px;
-    border-radius: 20rem;
+.edit-profile {
+    position: fixed;
+    right: 110px;
+    top: 30px;
+}
+
+.main-nav {
+    position: fixed;
+    right: 200px;
+}
+
+.brand {
+    position: fixed;
+    left: 50px;
+    top: 30px;
 }

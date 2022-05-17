@@ -1,0 +1,11 @@
+.add-device{
+    width: 60%;
+    margin: 1em;
+    margin-top: 5em;
+}
+
+.add-device-btn:hover {
+    background-color: #ed9121;
+    border: #ed9121;
+}
+

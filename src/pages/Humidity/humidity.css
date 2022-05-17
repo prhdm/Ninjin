@@ -1,0 +1,18 @@
+* {
+    direction: rtl;
+}
+.page-title {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: 3.7em;
+}
+
+.humidity-input {
+    width: 40%;
+    padding: 0rem;
+    margin: 0 auto;
+}
+
+
