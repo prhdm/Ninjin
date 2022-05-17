@@ -10,7 +10,7 @@ import { Button } from 'react-bootstrap';
 
 
 function loginUser(credentials) {
-    return fetch( 'http://79.175.177.48:8000/login' , {
+    return fetch( 'http://usagi.carriot.ir:8000/login' , {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
