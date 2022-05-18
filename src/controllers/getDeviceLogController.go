@@ -11,7 +11,7 @@ import (
 func (f FarmServer) GetDeviceLog(ctx context.Context, request *pb_device_log.GetDeviceLogRequest) (*pb_device_log.GetDeviceLogResponse, error) {
 	log.Info("Receive message to send log specified by time ")
 
-	result, Error := models.GetDeviceLog(request.GetDeviceSerial(), request.GetBeginTime().AsTime(), request.GetEndTime().AsTime())
+	result, Error := models.GetDeviceLog(request.GetDeviceSerial(), request.GetBeginTime().AsTime(), request.GetEndTime().AsTime(), ctx.Value("farm_id").(uint))
 
 	var deviceLogSlice []*pb_device_log.DeviceLog
 	for i, row := range result {
