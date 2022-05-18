@@ -15,4 +15,30 @@
     margin: 0 auto;
 }
 
+.set-form-btn{
+    display: block;
+    margin: auto;
+    width: 40%;
+}
+
+.success-modal{
+    color: green;
+}
+
+.success-btn{
+    margin: 0px;
+}
+
+.modal-header{
+    border-bottom: none;
+}
+
+.modal-footer{
+    border: none;
+}
+
+.modal-content{
+    text-align: center;
+}
+
 

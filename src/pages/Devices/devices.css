@@ -3,6 +3,13 @@
     margin: 1em;
     margin-top: 5em;
 }
+.add-device .add-device-btn {
+    border-radius: 10px;
+}
+
+.input-group-text{
+
+}
 
 .add-device-btn:hover {
     background-color: #ed9121;
@@ -17,3 +24,7 @@
     padding: 30px;
 }
 
+.modal-content .add-device-btn{
+    margin: 0px;
+    margin-left: -10px;
+}

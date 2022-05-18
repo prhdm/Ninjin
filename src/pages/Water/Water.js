@@ -50,10 +50,11 @@ const Water = () => {
                              onChange={ (event) => setAmount(event.target.value) }
                              type="text"
                 />
-                    <Button onClick={() => addNewWateringLog(deviceSerial, waterAmount)} variant="outline-secondary" id="button-addon2" className="add-device-btn">
-                    تنظیم
-                    </Button>
+
             </InputGroup>
+            <Button onClick={() => addNewWateringLog(deviceSerial, waterAmount)} variant="outline-secondary" id="button-addon2" className="add-device-btn set-form-btn">
+                تنظیم
+            </Button>
         </>
     );
 }
