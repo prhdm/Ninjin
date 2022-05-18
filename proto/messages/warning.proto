@@ -5,10 +5,13 @@ package messages.warning;
 option go_package = "farm/src/proto/messages/warning";
 
 message WarningRequest {
-  uint32 farm_id = 1;
 }
 
 message WarningResponse {
+  repeated Warning warnings = 1;
+}
+
+message Warning {
   string device_serial = 1;
   float difference = 2;
 }

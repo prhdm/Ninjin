@@ -16,7 +16,7 @@ func GetLastWarnings(farmId uint) ([]*WarningLog, error) {
 
 	for _, device := range deviceSlice {
 		warningLog := &WarningLog{}
-		result := PostgresDBProvider.DB.Where("device_serial = ? AND time >= ?", device.DeviceSerial, time.Now().Add(-time.Minute * 5)).Last(warningLog)
+		result := PostgresDBProvider.DB.Where("device_serial = ? AND server_time >= ?", device.DeviceSerial, time.Now().Add(-time.Minute * 5)).Last(warningLog)
 
 		if result.Error != nil {
 			log.Info(result.Error)
