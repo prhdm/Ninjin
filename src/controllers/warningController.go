@@ -4,6 +4,7 @@ import (
 	"context"
 	"farm/src/models"
 	pb_warning "farm/src/proto/messages/warning"
+	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
 func (f FarmServer) GetWarnings(ctx context.Context, request *pb_warning.WarningRequest) (*pb_warning.WarningResponse, error) {
@@ -16,6 +17,7 @@ func (f FarmServer) GetWarnings(ctx context.Context, request *pb_warning.Warning
 		warningLogPb := pb_warning.Warning{
 			DeviceSerial: warningLog.DeviceSerial,
 			Difference: warningLog.Difference,
+			Time: timestamppb.New(warningLog.ServerTime),
 		}
 		warningLogSlice = append(warningLogSlice, &warningLogPb)
 	}

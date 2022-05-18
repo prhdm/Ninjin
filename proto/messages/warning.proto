@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package messages.warning;
+import "google/protobuf/timestamp.proto";
 
 option go_package = "farm/src/proto/messages/warning";
 
@@ -14,4 +15,5 @@ message WarningResponse {
 message Warning {
   string device_serial = 1;
   float difference = 2;
+  google.protobuf.Timestamp time = 3;
 }
