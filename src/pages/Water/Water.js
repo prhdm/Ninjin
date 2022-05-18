@@ -46,7 +46,7 @@ const Water = () => {
                              onChange={ (event) => setSerial(event.target.value) }
                              type="text"
                 />
-                <FormControl aria-label="wateringAmount" placeholder="مقدار آب"
+                <FormControl aria-label="wateringAmount" placeholder="مقدار آب (ml)"
                              onChange={ (event) => setAmount(event.target.value) }
                              type="text"
                 />

@@ -14,23 +14,14 @@ const NavbarComp = () =>{
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" dir="rtl">
           <Container>
-          {/* <Navbar.Collapse dir="rtl" id="responsive-navbar-nav">
-            <Nav className="me-auto">
-                 <UserAvatar />
-                <Nav.Link href="/profile" className="edit-profile">پروفایل</Nav.Link>
-            </Nav>
-            </Navbar.Collapse> */}
 
           <Navbar.Collapse dir="rtl" id="responsive-navbar-nav">
             <Nav className="me-auto main-nav">
-              {/* <Nav.Link href="/">داشبورد</Nav.Link> */}
-              <Nav.Link href="/report">گزارش</Nav.Link>
               <Nav.Link href="/">دستگاه‌ها</Nav.Link>
-              <Nav.Link href="/warnings">هشدارها</Nav.Link>
-              {/* <NavDropdown title="تنظیمات" id="collasible-nav-dropdown"> */}
+                <Nav.Link href="/report">گزارش</Nav.Link>
+                <Nav.Link href="/warning">هشدارها</Nav.Link>
                 <Nav.Link href="/humidity">تنظیمات رطوبت</Nav.Link>
                 <Nav.Link href="/water">فرم آبدهی</Nav.Link>
-              {/* </NavDropdown> */}
             </Nav>
             <Nav>
             <button className="btn logout" onClick={handleLogout}>خروج</button>

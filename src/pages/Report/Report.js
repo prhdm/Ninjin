@@ -97,7 +97,7 @@ const Report = () => {
                                   onChange={ (event) => setEndDate(event.target.value) }
                     />
                 </Form.Group>
-                    <Button onClick={() => setDeviceSerial(inputSerial, inputBeginDate, inputEndDate)} variant="outline-secondary" id="button-addon2" className="add-device-btn">
+                    <Button onClick={() => setDeviceSerial(inputSerial, inputBeginDate, inputEndDate)} variant="outline-secondary" id="button-addon2" className="add-device-btn view-report">
                         مشاهده
                     </Button>
             </Form>

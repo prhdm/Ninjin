@@ -29,7 +29,7 @@ function App() {
       <Route path="/humidity" element={<Humidity />} />
       <Route path="/water" element={<Water />} />
       {/*<Route path="/devices" element={<Devices />} />*/}
-      <Route path="/warnings" element={<Warning />} />
+      <Route path="/warning" element={<Warning />} />
       
 
     </Routes>
