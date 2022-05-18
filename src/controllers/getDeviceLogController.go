@@ -22,7 +22,7 @@ func (f FarmServer) GetDeviceLog(ctx context.Context, request *pb_device_log.Get
 			Humidity:     int32(row.Humidity),
 			Temp:         int32(row.Temp),
 		}
-		if i % 10 == 0{
+		if len(deviceLogSlice) > 10 && i % 10 == 0{
 			deviceLogSlice = append(deviceLogSlice, &deviceLog)
 		}
 	}
