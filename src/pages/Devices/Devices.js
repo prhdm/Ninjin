@@ -145,7 +145,7 @@ const Devices = () => {
             </InputGroup>
 
             <ListGroup as="ol" numbered>
-                {devices.map(item => {
+                {devices != undefined && devices.map(item => {
                 return (
                     <>
                     <ListGroup.Item
