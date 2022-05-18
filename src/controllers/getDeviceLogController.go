@@ -14,7 +14,7 @@ func (f FarmServer) GetDeviceLog(ctx context.Context, request *pb_device_log.Get
 	result, Error := models.GetDeviceLog(request.GetDeviceSerial(), request.GetBeginTime().AsTime(), request.GetEndTime().AsTime())
 
 	var deviceLogSlice []*pb_device_log.DeviceLog
-	for _, row := range result {
+	for i, row := range result {
 		var deviceLog pb_device_log.DeviceLog
 		deviceLog = pb_device_log.DeviceLog{
 			DeviceSerial: row.DeviceSerial,
@@ -22,7 +22,9 @@ func (f FarmServer) GetDeviceLog(ctx context.Context, request *pb_device_log.Get
 			Humidity:     int32(row.Humidity),
 			Temp:         int32(row.Temp),
 		}
-		deviceLogSlice = append(deviceLogSlice, &deviceLog)
+		if i % 10 == 0{
+			deviceLogSlice = append(deviceLogSlice, &deviceLog)
+		}
 	}
 
 	return &pb_device_log.GetDeviceLogResponse{
