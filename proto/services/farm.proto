@@ -78,8 +78,7 @@ service Farm {
 
   rpc GetWarnings (messages.warning.WarningRequest) returns (messages.warning.WarningResponse) {
     option (google.api.http) = {
-      post: "/warning/get"
-      body: "*"
+      get: "/warning/get"
     };
   }
 
