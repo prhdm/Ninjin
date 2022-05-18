@@ -85,7 +85,6 @@ const Devices = () => {
 
         });
       }
-///device/edit-name"
       const editDeviceName = () => {
         console.log(deviceSerial)
         console.log(deviceNewName.new_name)
@@ -145,7 +144,7 @@ const Devices = () => {
             </InputGroup>
 
             <ListGroup as="ol" numbered>
-                {devices != undefined && devices.map(item => {
+                {devices && devices.map(item => {
                 return (
                     <>
                     <ListGroup.Item
@@ -186,7 +185,8 @@ const Devices = () => {
                     
                     </>
                 );
-                })}
+                })
+                }
             </ListGroup>
         </>
     );
