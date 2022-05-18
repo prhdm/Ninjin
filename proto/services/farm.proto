@@ -76,7 +76,12 @@ service Farm {
     };
   }
 
-  rpc Warning (messages.warning.WarningRequest) returns (stream messages.warning.WarningResponse) { }
+  rpc GetWarnings (messages.warning.WarningRequest) returns (messages.warning.WarningResponse) {
+    option (google.api.http) = {
+      post: "/warning/get"
+      body: "*"
+    };
+  }
 
   rpc GetWateringLog (messages.log.GetWateringLogListRequest) returns (messages.log.GetWateringLogListResponse) {
     option (google.api.http) = {

@@ -8,5 +8,10 @@ message WarningRequest {
 }
 
 message WarningResponse {
-  float difference=1;
+  repeated Warning warnings = 1;
+}
+
+message Warning {
+  string device_serial = 1;
+  float difference = 2;
 }
