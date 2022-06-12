@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package service.farm;
+import "google/api/annotations.proto";
+import "messages/user.proto";
+import "messages/device.proto";
+import "messages/device_log.proto";
+import "messages/device_list.proto";
+import "messages/delete_device.proto";
+import "messages/watering_log.proto";
+import "messages/set_device_humidity.proto";
+import "messages/warning.proto";
+
+option go_package = "farm/src/proto/service/farm";
+
+service Farm {
+  rpc Login (messages.user.LoginRequest) returns (messages.user.LoginResponse) {
+    option (google.api.http) = {
+      post: "/login"
+      body: "*"
+    };
+  }
+
+  rpc CreateDevice (messages.device.CreateDeviceRequest) returns (messages.device.CreateDeviceResponse) {
+    option (google.api.http) = {
+      post: "/device/create"
+      body: "*"
+    };
+  }
+
+  rpc GetDeviceLog (messages.device_log.GetDeviceLogRequest) returns (messages.device_log.GetDeviceLogResponse) {
+    option (google.api.http) = {
+      post: "/device/get_log"
+      body: "*"
+    };
+  }
+
+  rpc GetDeviceList (messages.device_list.GetDeviceListRequest) returns (messages.device_list.GetDeviceListResponse) {
+    option (google.api.http) = {
+      get: "/device/device_list"
+    };
+  }
+
+  rpc Logout (messages.user.LogoutRequest) returns (messages.user.LogoutResponse) {
+    option (google.api.http) = {
+      post: "/logout"
+      body: "*"
+    };
+  }
+
+  rpc DeleteDevice (messages.delete_device.DeleteDeviceRequest) returns (messages.delete_device.DeleteDeviceResponse) {
+    option (google.api.http) = {
+      post: "/device/delete_device"
+      body: "*"
+    };
+  }
+
+  rpc CreateWateringLog (messages.log.CreateWateringLogRequest) returns (messages.log.CreateWateringLogResponse) {
+    option (google.api.http) = {
+      post: "/watering-log/create"
+      body: "*"
+    };
+  }
+
+  rpc EditDeviceName (messages.device.EditDeviceNameRequest) returns (messages.device.EditDeviceNameResponse) {
+    option (google.api.http) = {
+      post: "/device/edit-name"
+      body: "*"
+    };
+  }
+
+  rpc SetDeviceHumidity (messages.set_device_humidity.SetDeviceHumidityRequest) returns (messages.set_device_humidity.SetDeviceHumidityResponse) {
+    option (google.api.http) = {
+      post: "/device/set_humidity"
+      body: "*"
+    };
+  }
+
+  rpc GetWarnings (messages.warning.WarningRequest) returns (messages.warning.WarningResponse) {
+    option (google.api.http) = {
+      get: "/warning/get"
+    };
+  }
+
+  rpc GetWateringLog (messages.log.GetWateringLogListRequest) returns (messages.log.GetWateringLogListResponse) {
+    option (google.api.http) = {
+      post: "/watering-log/get"
+      body: "*"
+    };
+  }
+}

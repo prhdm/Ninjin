@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package messages.set_device_humidity;
+
+option go_package = "farm/src/proto/messages/set_device_humidity";
+
+message SetDeviceHumidityRequest {
+  string device_serial=1;
+  float min_humidity=2;
+  float max_humidity=3;
+}
+
+message SetDeviceHumidityResponse {
+  bool status=1;
+  string error_message=2;
+}
