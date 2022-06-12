@@ -1,0 +1,8 @@
+*{
+    direction: rtl;
+}
+body {
+    background-image: url(../img/3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
