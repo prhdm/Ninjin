@@ -1,0 +1,17 @@
+.menu {
+    height: 100vh;
+    direction: rtl;
+}
+
+.pro-item-content{
+    font-size: 16px;
+}
+
+.pro-inner-item{
+    direction: rtl;
+    /* color: aquamarine; */
+}
+
+.pro-sidebar-layout {
+    direction: rtl;
+}
